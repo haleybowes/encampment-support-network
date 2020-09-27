@@ -11,9 +11,22 @@ export const query = graphql`
 		contentfulPage(internalName: { eq: "Main" }) {
 			id
 			content {
-				id
-				body {
-					json
+				... on ContentfulTile {
+					backgroundColour
+					component
+					body {
+						json
+					}
+					header {
+						json
+					}
+					primaryLink {
+						altText
+						linkUrl
+						linkText {
+							json
+						}
+					}
 				}
 			}
 		}
