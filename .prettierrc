@@ -5,5 +5,7 @@
   "printWidth": 100,
   "useTabs": true,
   "bracketSpacing": true,
-  "parser": "babel"
+  "parser": "babel",
+  "tabWidth": 2,
+  "endOfLine": "lf"
 }
