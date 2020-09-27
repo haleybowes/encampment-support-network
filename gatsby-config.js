@@ -6,5 +6,16 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `3iqo0at97vma`,
+        accessToken: `98GqtRMwsFYoRgknuRUablZq1k6ytK9cs2Va-CQN0M0`,
+      },
+    },
+  ],
 }
