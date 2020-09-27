@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PageBuilder from '../templates/pageBuilder';
 
 const Home = ({ data }) => {
-	console.log(data);
-	return <h1>hi!</h1>;
+	return <PageBuilder content={data.contentfulPage.content} />
 };
 
 export const query = graphql`
@@ -12,6 +12,7 @@ export const query = graphql`
 			id
 			content {
 				... on ContentfulTile {
+					id
 					backgroundColour
 					component
 					body {
