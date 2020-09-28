@@ -5,17 +5,25 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [
-    {
-      resolve: `gatsby-plugin-styled-components`,
-    },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `3iqo0at97vma`,
-        accessToken: `98GqtRMwsFYoRgknuRUablZq1k6ytK9cs2Va-CQN0M0`,
-      },
-    },
-  ],
-}
+	/* Your site config here */
+	plugins: [
+		{
+			resolve: `gatsby-plugin-styled-components`,
+		},
+		{
+			resolve: `gatsby-source-contentful`,
+			options: {
+				spaceId: `3iqo0at97vma`,
+				accessToken: `98GqtRMwsFYoRgknuRUablZq1k6ytK9cs2Va-CQN0M0`,
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-web-font-loader',
+			options: {
+				typekit: {
+					id: 'qmd0wsw',
+				},
+			},
+		},
+	],
+};

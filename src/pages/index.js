@@ -2,9 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PageBuilder from '../templates/pageBuilder';
 
-const Home = ({ data }) => {
-	return <PageBuilder content={data.contentfulPage.content} />
-};
+const Main = ({ data }) => <PageBuilder content={data.contentfulPage.content} />;
 
 export const query = graphql`
 	query MyQuery {
@@ -21,7 +19,15 @@ export const query = graphql`
 					header {
 						json
 					}
+					asset {
+						id
+						description
+						file {
+							url
+						}
+					}
 					primaryLink {
+						component
 						altText
 						linkUrl
 						linkText {
@@ -34,4 +40,4 @@ export const query = graphql`
 	}
 `;
 
-export default Home;
+export default Main;
