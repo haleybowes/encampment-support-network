@@ -5,6 +5,11 @@ import Header from '../components/Header';
 import Tile from '../components/Tile';
 import GlobalStyle from '../styles/globalStyles';
 
+const Wrapper = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+`;
+
 const StyledPage = styled.div``;
 const PageBuilder = ({ content }) => {
 	if (!content) return null;
@@ -13,16 +18,18 @@ const PageBuilder = ({ content }) => {
 		<StyledPage>
 			<GlobalStyle />
 			<Header />
-			{content.map(child => {
-				switch(child.component) {
-					case 'HalfTile':
-						return <Tile key={child.id} {...child} />
-					default:
-						return null;
-				}
-			})}
+			<Wrapper>
+				{content.map((child) => {
+					switch (child.component) {
+						case 'HalfTile':
+							return <Tile key={child.id} {...child} />;
+						default:
+							return null;
+					}
+				})}
+			</Wrapper>
 		</StyledPage>
-	)
+	);
 };
 
 export default PageBuilder;
