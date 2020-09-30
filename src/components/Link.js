@@ -6,32 +6,36 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import RichText from '../components/RichText';
 
 const StyledGatsbyLink = styled(GatsbyLink)`
-	color: #fefefe;
-	border: 1px solid #fefefe;
+	color: #060B04;
+	border: 1px solid #060B04;
 	border-radius: 5px;
-	padding: 15px 35px;
+	padding: 20px 40px;
 	display: inline-block;
 	text-align: center;
 	transition: all ease-in-out 0.2s;
 
 	&:hover {
-		background-color: #fefefe;
-		color: #060B04;
+		background-color: #060B04;
+		color: #F6F6EB;
 	}
 `;
 
 const StyledLink = styled.a`
-	color: #fefefe;
-	border: 1px solid #fefefe;
+	color: #060B04;
+	border: 1px solid #060B04;
 	border-radius: 5px;
-	padding: 15px 35px;
+	padding: 15px 30px;
 	display: inline-block;
 	text-align: center;
 	transition: all ease-in-out 0.2s;
 
+	@media (min-width: 768px) {
+		padding: 20px 40px;
+	}
+
 	&:hover {
-		background-color: #fefefe;
-		color: #060B04;
+		background-color: #060B04;
+		color: #F6F6EB;
 	}
 `;
 

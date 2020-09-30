@@ -26,6 +26,14 @@ export const query = graphql`
 							url
 						}
 					}
+					secondaryLink {
+						component
+						altText
+						linkUrl
+						linkText {
+							json
+						}
+					}
 					primaryLink {
 						component
 						altText

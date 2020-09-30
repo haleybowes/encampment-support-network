@@ -8,9 +8,13 @@ import GlobalStyle from '../styles/globalStyles';
 const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
+	padding: 5px;
 `;
 
-const StyledPage = styled.div``;
+const StyledPage = styled.div`
+	max-width: 1200px;
+	margin: 0 auto;
+`;
 const PageBuilder = ({ content }) => {
 	if (!content) return null;
 
@@ -22,6 +26,7 @@ const PageBuilder = ({ content }) => {
 				{content.map((child) => {
 					switch (child.component) {
 						case 'HalfTile':
+						case 'FullTile':
 							return <Tile key={child.id} {...child} />;
 						default:
 							return null;
