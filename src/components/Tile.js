@@ -4,6 +4,21 @@ import styled from 'styled-components';
 import RichText from '../components/RichText';
 import Link from '../components/Link';
 
+const StyledLink = styled(Link)`
+	color: #060b04;
+	border: 1px solid #060b04;
+	border-radius: 5px;
+	padding: 20px 40px;
+	display: inline-block;
+	text-align: center;
+	transition: all ease-in-out 0.2s;
+
+	&:hover {
+		background-color: #060b04;
+		color: #f6f6eb;
+	}
+`;
+
 const StyledTile = styled.div`
 	background-color: ${({ backgroundColour }) => backgroundColour};
 	margin: 5px;
@@ -94,8 +109,8 @@ const Tile = ({ backgroundColour, component, body, header, primaryLink, secondar
 						{body && <RichText document={body.json} />}
 						{primaryLink && (
 							<LinkWrapper>
-								{primaryLink && <Link link={primaryLink} />}
-								{secondaryLink && <Link link={secondaryLink} />}
+								{primaryLink && <StyledLink link={primaryLink} />}
+								{secondaryLink && <StyledLink link={secondaryLink} />}
 							</LinkWrapper>
 						)}
 					</TextWrapper>

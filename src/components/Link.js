@@ -5,60 +5,31 @@ import { BLOCKS } from '@contentful/rich-text-types';
 
 import RichText from '../components/RichText';
 
-const StyledGatsbyLink = styled(GatsbyLink)`
-	color: #060B04;
-	border: 1px solid #060B04;
-	border-radius: 5px;
-	padding: 20px 40px;
-	display: inline-block;
-	text-align: center;
-	transition: all ease-in-out 0.2s;
+const Image = styled.img``;
 
-	&:hover {
-		background-color: #060B04;
-		color: #F6F6EB;
-	}
-`;
-
-const StyledLink = styled.a`
-	color: #060B04;
-	border: 1px solid #060B04;
-	border-radius: 5px;
-	padding: 15px 30px;
-	display: inline-block;
-	text-align: center;
-	transition: all ease-in-out 0.2s;
-
-	@media (min-width: 768px) {
-		padding: 20px 40px;
-	}
-
-	&:hover {
-		background-color: #060B04;
-		color: #F6F6EB;
-	}
-`;
-
-const Link = ({ link }) => {
-	const isInternal = /^\/(?!\/)/.test(link.linkUrl);
+const Link = ({ link: { linkUrl, linkText, image } }) => {
+	const isInternal = /^\/(?!\/)/.test(linkUrl);
 	const options = {
 		renderNode: {
 			[BLOCKS.PARAGRAPH]: (node, text) => <span>{text}</span>,
 		},
 	};
 
+	const children = (
+		<>
+			{linkText && <RichText document={linkText.json} customOptions={options} />}
+			{image && <Image src={image.file.url} alt="" />}
+		</>
+	);
+
 	if (isInternal) {
-		return (
-			<StyledGatsbyLink to={link.linkUrl}>
-				<RichText document={link.linkText.json} customOptions={options} />
-			</StyledGatsbyLink>
-		);
+		return <GatsbyLink to={linkUrl}>{children}</GatsbyLink>;
 	}
 
 	return (
-		<StyledLink href={link.linkUrl} target="_blank">
-			<RichText document={link.linkText.json} customOptions={options} />
-		</StyledLink>
+		<a href={linkUrl} rel="noreferrer" target="_blank">
+			{children}
+		</a>
 	);
 };
 
