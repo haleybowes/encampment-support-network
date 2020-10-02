@@ -4,32 +4,30 @@ import styled from 'styled-components';
 import Link from '../Link';
 
 const StyledNav = styled.nav`
+	display: flex;
 	margin-bottom: 100px;
-`;
-
-const StyledList = styled.ul`
 	position: fixed;
 	top: 0;
-	list-style-type: none;
-	background-color: #e3ce60;
 	display: flex;
+	justify-content: space-between;
 	width: 100%;
 	align-items: center;
+	background-color: #e3ce60;
 	margin: 0;
 	-webkit-box-shadow: 0px 3px 5px 0px rgba(6, 11, 4, 0.24);
 	-moz-box-shadow: 0px 3px 5px 0px rgba(6, 11, 4, 0.24);
 	box-shadow: 0px 3px 5px 0px rgba(6, 11, 4, 0.24);
 	padding: 10px 20px;
+`;
 
-	li {
-		a {
-			color: #060b04;
-		}
+const StyledList = styled.ul`
+	list-style-type: none;
+	display: flex;
 
-		/* &:nth-of-type(2), */
-		&:nth-of-type(1) {
+	&:nth-of-type(1) {
+		li {
 			a {
-				margin-right: 15px;
+				color: #060b04;
 				border: 1px solid #060b04;
 				border-radius: 5px;
 				padding: 15px 30px;
@@ -43,34 +41,52 @@ const StyledList = styled.ul`
 				}
 			}
 		}
+	}
 
-		&:nth-of-type(3) {
-			img {
-				max-width: 90px;
-			}
+	&:nth-of-type(2) {
+		img {
+			max-width: 85px;
 		}
+	}
 
-		&:nth-of-type(4),
-		&:nth-of-type(5) {
-			img {
-				max-width: 40px;
-				padding: 7px;
-			}
+	&:nth-of-type(3) {
+		img {
+			max-width: 40px;
+			padding: 7px;
 		}
 	}
 `;
 
-const DesktopNav = ({ content }) => {
-	console.log(content);
+const DesktopNav = ({ content: { logoLink, socialLinks, textLinks } }) => {
+	console.log(logoLink, socialLinks, textLinks);
+	// console.log(content);
 	return (
 		<StyledNav>
-			<StyledList>
-				{content.map((item) => (
+			{textLinks && (
+				<StyledList>
+					{textLinks.map((link) => (
+						<li key={link.id}>
+							<Link link={link} />
+						</li>
+					))}
+				</StyledList>
+			)}
+			{logoLink && (
+				<StyledList>
 					<li>
-						<Link link={item} />
+						<Link link={logoLink} />
 					</li>
-				))}
-			</StyledList>
+				</StyledList>
+			)}
+			{socialLinks && (
+				<StyledList>
+					{socialLinks.map((link) => (
+						<li key={link.id}>
+							<Link link={link} />
+						</li>
+					))}
+				</StyledList>
+			)}
 		</StyledNav>
 	);
 };
