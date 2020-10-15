@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import * as Contentful from '@contentful/rich-text-react-renderer';
 
@@ -9,6 +10,7 @@ const RichText = ({ document, customOptions }) => {
 			renderMark: {
 				[MARKS.BOLD]: (text) => <strong>{text}</strong>,
 				[MARKS.ITALIC]: (text) => <em>{text}</em>,
+				[MARKS.CODE]: html => ReactHtmlParser(html),
 			},
 			renderNode: {
 				[BLOCKS.PARAGRAPH]: (node, text) => <p>{text}</p>,

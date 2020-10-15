@@ -13,6 +13,11 @@ export const query = graphql`
 					id
 					backgroundColour
 					component
+					logo {
+						file {
+							url
+						}
+					}
 					body {
 						json
 					}
@@ -40,6 +45,18 @@ export const query = graphql`
 						linkUrl
 						linkText {
 							json
+						}
+					}
+					floatingAsset {
+						id
+						file {
+							url
+						}
+					}
+					secondaryAsset {
+						id
+						file {
+							url
 						}
 					}
 				}

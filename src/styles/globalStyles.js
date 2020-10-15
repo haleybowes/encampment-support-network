@@ -18,7 +18,9 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		margin: 0;
 		padding: 0;
-		background-color: #E3CE60;
+		/* background-color: #E3CE60; */
+		/* background-color: #202020; */
+		background-color: #FBFBFB;
 	}
 
 	h1, h2, h3, p {
@@ -26,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		-webkit-font-smoothing: antialiased;
 		color: #060B04;
+		/* color: #FBFBFB; */
 	}
 
 	h3 {
