@@ -24,6 +24,7 @@ const ImageWrapper = styled.div`
 
 	&:first-of-type {
 		align-items: center;
+		padding-left: 25px;
 	}
 
 	&:last-of-type {

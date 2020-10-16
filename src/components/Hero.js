@@ -23,20 +23,21 @@ const Text = styled.div`
 	h1 {
 		font-size: 36px;
 		font-weight: 600;
-		margin-bottom: 10px;
+		/* margin-bottom: 10px; */
 		line-height: 36px;
 	}
 `;
 
 const StyledHero = styled.section`
 	display: flex;
-	min-height: 562px;
+	min-height: 650px;
 `;
 
 const FloatingAsset = styled.img`
 	position: absolute;
-	top: -35px;
+	/* top: -35px; */
 	right: -250px;
+	bottom: 0;
 `;
 
 const Asset = styled.div`
