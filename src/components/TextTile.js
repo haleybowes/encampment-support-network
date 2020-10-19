@@ -19,12 +19,13 @@ const StyledTile = styled.div`
 	justify-content: space-between;
 
 	@media (min-width: 768px) {
-		width: 47%;
+		width: ${({ component }) => (component === 'FullTextTile' ? '100%' : '47%')};
+		/* width: 47%; */
 		margin: 0 20px 50px;
 		border-radius: 6px;
-		box-shadow: 1px 1px #060B04, 2px 2px #060B04, 3px 3px #060B04, 4px 4px #060B04, 5px 5px #060B04,
-			6px 6px #060B04, 7px 7px #060B04, 8px 8px #060B04, 9px 9px #060B04, 10px 10px #060B04,
-			11px 11px #060B04, 12px 12px #060B04;
+		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
+			6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04, 9px 9px #060b04, 10px 10px #060b04,
+			11px 11px #060b04, 12px 12px #060b04;
 	}
 
 	h1 {
@@ -37,7 +38,7 @@ const StyledTile = styled.div`
 
 	h2 {
 		font-size: 32px;
-        line-height: 32px;
+		line-height: 32px;
 	}
 
 	h3 {
@@ -104,14 +105,16 @@ const TextWrapper = styled.div`
 	}
 
 	@media (min-width: 1024px) {
-        padding: 70px 50px 20px;
+		padding: 90px 80px 20px;
 		/* padding: 70px 70px 0 70px; */
 	}
 `;
 
 const LinkWrapper = styled.div`
-	&:nth-child(2) {
-		margin-left: 20px;
+	margin: 16px 0 90px;
+
+	a {
+		font-size: 20px;
 	}
 `;
 
@@ -132,8 +135,9 @@ const TextTile = ({
 	floatingAsset,
 	secondaryAsset,
 }) => {
+	console.log(component);
 	return (
-		<StyledTile component={component} backgroundColour={backgroundColour}>
+		<StyledTile component={component}>
 			<TextWrapper component={component}>
 				{logo && (
 					<Logo>

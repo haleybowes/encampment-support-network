@@ -23,7 +23,7 @@ const Text = styled.div`
 	h1 {
 		font-size: 36px;
 		font-weight: 600;
-		/* margin-bottom: 10px; */
+		margin-bottom: 1rem;
 		line-height: 36px;
 	}
 `;
@@ -36,7 +36,7 @@ const StyledHero = styled.section`
 const FloatingAsset = styled.img`
 	position: absolute;
 	/* top: -35px; */
-	right: -250px;
+	right: -300px;
 	bottom: 0;
 `;
 

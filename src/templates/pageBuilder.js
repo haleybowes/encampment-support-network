@@ -7,6 +7,8 @@ import IntroTile from '../components/IntroTile';
 import GlobalStyle from '../styles/globalStyles';
 import TextTile from '../components/TextTile';
 import Hero from '../components/Hero';
+import ListTile from '../components/ListTile';
+import SplitTile from '../components/SplitTile';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -28,6 +30,10 @@ const PageBuilder = ({ content }) => {
 			<Wrapper>
 				{content.map((child) => {
 					switch (child.component) {
+						case 'SplitTile':
+							return <SplitTile key={child.id} {...child} />
+						case 'ListTile':
+							return <ListTile key={child.id} {...child} />
 						case 'Hero':
 							return <Hero key={child.id} {...child} />;
 						case 'HalfTile':
@@ -36,6 +42,7 @@ const PageBuilder = ({ content }) => {
 						case 'IntroTile':
 							return <IntroTile key={child.id} {...child} />;
 						case 'TextTile':
+						case 'FullTextTile':
 							return <TextTile key={child.id} {...child} />;
 						default:
 							return null;
