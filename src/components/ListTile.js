@@ -19,8 +19,12 @@ const Tile = styled.section`
 `;
 
 const TextWrapper = styled.div`
-	max-width: 50%;
+	max-width: 70%;
 	margin: 0 auto;
+
+	@media (min-width: 1440px) {
+		max-width: 50%;
+	}
 
 	p:empty {
 		display: none;
@@ -38,7 +42,7 @@ const TextWrapper = styled.div`
 	p {
 		font-family: gopher, sans-serif;
 		font-weight: 500;
-		font-size: 22px;
+		font-size: 20px;
 		margin-bottom: 20px;
 	}
 `;

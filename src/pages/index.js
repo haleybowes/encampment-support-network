@@ -38,6 +38,11 @@ export const query = graphql`
 						linkText {
 							json
 						}
+						caret {
+							file {
+								url
+							}
+						}
 					}
 					primaryLink {
 						component
@@ -45,6 +50,11 @@ export const query = graphql`
 						linkUrl
 						linkText {
 							json
+						}
+						caret {
+							file {
+								url
+							}
 						}
 					}
 					floatingAsset {

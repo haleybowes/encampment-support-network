@@ -4,23 +4,32 @@ import RichText from './RichText';
 
 const Tile = styled.section`
 	display: flex;
+	flex-direction: column;
 `;
 
 const TextWrapper = styled.div`
-	width: 50%;
+	/* width: 50%; */
 
 	h3 {
 		font-weight: 100;
-    font-size: 22px;
-    text-align: center;
-		padding: 0 100px;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		margin: 0 auto;
+		max-width: 500px;
+
+		@media (min-width: 1440px) {
+			font-size: 22px;
+		}
+		/* padding: 0 100px; */
 	}
 `;
 const ImageWrapper = styled.div`
-	width: 50%;
+	/* width: 50%; */
+	text-align: right;
 
 	img {
-		max-width: 100%;
+		max-width: 95%;
 	}
 `;
 
@@ -36,7 +45,7 @@ const SplitTile = ({
 	floatingAsset,
 	secondaryAsset,
 }) => {
-	console.log('helo?')
+	console.log('helo?');
 	return (
 		<Tile>
 			<TextWrapper>{body && <RichText document={body.json} />}</TextWrapper>

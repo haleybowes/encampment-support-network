@@ -14,39 +14,66 @@ const Logo = styled.div`
 
 const Text = styled.div`
 	position: relative;
-	width: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 0 150px 0 50px;
+
+	@media (max-width: 1023px) {
+		order: 1;
+		max-width: 70%;
+		padding: 60px 0 60px 20px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 50%;
+		padding: 0 150px 0 50px;
+	}
 
 	h1 {
-		font-size: 36px;
+		font-size: 30px;
 		font-weight: 600;
-		margin-bottom: 1rem;
 		line-height: 36px;
+
+		@media (min-width: 1024px) {
+			font-size: 36px;
+			margin-bottom: 1rem;
+		}
 	}
 `;
 
 const StyledHero = styled.section`
 	display: flex;
-	min-height: 650px;
+	flex-direction: column;
+
+	@media (min-width: 1024px) {
+		min-height: 650px;
+		flex-direction: row;
+	}
 `;
 
 const FloatingAsset = styled.img`
 	position: absolute;
-	/* top: -35px; */
-	right: -300px;
 	bottom: 0;
+
+	@media (min-width: 1024px) {
+		right: -280px;
+	}
 `;
 
 const Asset = styled.div`
-	width: 50%;
-	height: 100%;
 	background-image: url(${({ backgroundImage }) => backgroundImage});
 	border-radius: 6px;
 	background-size: cover;
 	background-position: center;
+
+	@media (max-width: 1023px) {
+		height: 525px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 50%;
+		height: 100%;
+	}
 `;
 
 const Hero = ({ logo, header, body, floatingAsset, asset }) => {

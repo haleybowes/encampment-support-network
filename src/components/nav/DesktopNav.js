@@ -15,12 +15,11 @@ const StyledNav = styled.nav`
 	background-color: white;
 	min-height: 85px;
 	z-index: 1;
-	/* background-color: #e3ce60; */
 	margin: 0;
-	/* -webkit-box-shadow: 0px 3px 5px 0px rgba(6, 11, 4, 0.24);
-	-moz-box-shadow: 0px 3px 5px 0px rgba(6, 11, 4, 0.24);
-	box-shadow: 0px 3px 5px 0px rgba(6, 11, 4, 0.24); */
 	padding: 10px 20px;
+	/* -webkit-box-shadow: 0px 8px 0px 0px rgba(6, 11, 4, 0.7);
+	-moz-box-shadow: 0px 8px 0px 0px rgba(6, 11, 4, 0.7);
+	box-shadow: 0px 5px 0px 0px rgba(6, 11, 4, 0.7); */
 
 	a {
 		cursor: pointer;
@@ -50,7 +49,7 @@ const StyledList = styled.ul`
 				a {
 					border: 1px solid #060b04;
 					border-radius: 5px;
-					color: #F6F6EB;
+					color: #f6f6eb;
 					background-color: #060b04;
 				}
 			}
@@ -62,11 +61,6 @@ const StyledList = styled.ul`
 				display: inline-block;
 				text-align: center;
 				transition: all ease-in-out 0.2s;
-
-				/* &:hover {
-					background-color: #060b04;
-					color: #f6f6eb;
-				} */
 			}
 		}
 	}
