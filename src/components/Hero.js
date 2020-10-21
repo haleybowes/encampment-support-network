@@ -33,6 +33,7 @@ const Text = styled.div`
 		font-size: 30px;
 		font-weight: 600;
 		line-height: 36px;
+		text-align: center;
 
 		@media (min-width: 1024px) {
 			font-size: 36px;

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useStaticQuery } from 'gatsby';
+import styled from 'styled-components';
 
 import DesktopNav from './DesktopNav';
+import MobileNav from './MobileNav';
 
 const Nav = () => {
-	const { contentfulNav }= useStaticQuery(graphql`
+	const { contentfulNav } = useStaticQuery(graphql`
 		query NavQuery {
 			contentfulNav {
 				id
@@ -45,6 +47,7 @@ const Nav = () => {
 	return (
 		<>
 			<DesktopNav content={contentfulNav} />
+			<MobileNav content={contentfulNav} />
 		</>
 	);
 };

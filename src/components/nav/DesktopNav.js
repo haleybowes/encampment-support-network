@@ -21,6 +21,10 @@ const StyledNav = styled.nav`
 	-moz-box-shadow: 0px 8px 0px 0px rgba(6, 11, 4, 0.7);
 	box-shadow: 0px 5px 0px 0px rgba(6, 11, 4, 0.7); */
 
+	@media(max-width: 768px) {
+		display: none;
+	}
+
 	a {
 		cursor: pointer;
 	}
