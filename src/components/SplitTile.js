@@ -12,11 +12,17 @@ const TextWrapper = styled.div`
 
 	h3 {
 		font-weight: 100;
-		font-size: 20px;
-		line-height: 24px;
 		text-align: center;
 		margin: 0 auto;
 		max-width: 500px;
+		font-size: 18px;
+		line-height: 22px;
+		padding: 0 20px 30px;
+
+		@media (min-width: 768px) {
+			font-size: 20px;
+			line-height: 24px;
+		}
 
 		@media (min-width: 1440px) {
 			font-size: 22px;

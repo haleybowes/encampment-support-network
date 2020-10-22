@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 5px;
+	/* padding: 5px; */
 	max-width: 1440px;
 	margin: 80px auto 0;
 `;

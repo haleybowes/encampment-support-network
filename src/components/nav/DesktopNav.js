@@ -17,11 +17,8 @@ const StyledNav = styled.nav`
 	z-index: 1;
 	margin: 0;
 	padding: 10px 20px;
-	/* -webkit-box-shadow: 0px 8px 0px 0px rgba(6, 11, 4, 0.7);
-	-moz-box-shadow: 0px 8px 0px 0px rgba(6, 11, 4, 0.7);
-	box-shadow: 0px 5px 0px 0px rgba(6, 11, 4, 0.7); */
 
-	@media(max-width: 768px) {
+	@media (max-width: 768px) {
 		display: none;
 	}
 
@@ -50,11 +47,28 @@ const StyledList = styled.ul`
 	&:nth-of-type(1) {
 		li {
 			&:first-of-type {
-				a {
+				/* a {
 					border: 1px solid #060b04;
 					border-radius: 5px;
 					color: #f6f6eb;
 					background-color: #060b04;
+				} */
+				a {
+					color: #060b04;
+					letter-spacing: 0.5px;
+					border-radius: 5px;
+					font-weight: 500;
+					padding: 15px 30px;
+					border: 1px solid #060b04;
+					box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04,
+						5px 5px #060b04, 6px 6px #060b04;
+					transition: 0.25s box-shadow, 0.25s transform;
+					/* font-size: 20px; */
+
+					&:hover {
+						box-shadow: unset;
+						transform: translate(0.3em, 0.2em);
+					}
 				}
 			}
 

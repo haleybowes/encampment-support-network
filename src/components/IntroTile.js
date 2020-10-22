@@ -5,22 +5,34 @@ import RichText from '../components/RichText';
 
 const Tile = styled.section`
 	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
 `;
 
 const Body = styled.div`
-	width: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	padding: 30px 20px;
 
 	p:first-of-type {
 		margin-bottom: 15px;
 	}
+
+	@media(min-width: 768px) {
+		width: 50%;
+	}
 `;
 
 const ImageWrapper = styled.div`
-	width: 25%;
 	display: flex;
+
+	@media (min-width: 768px) {
+		width: 25%;
+	}
 
 	&:first-of-type {
 		align-items: center;

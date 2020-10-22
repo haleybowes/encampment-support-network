@@ -15,6 +15,7 @@ const Logo = styled.div`
 
 const StyledTile = styled.div`
 	width: 100%;
+	padding: 50px 10px;
 
 	@media (min-width: 768px) {
 		width: ${({ component }) => (component === 'HalfTile' ? '50%' : '100%')};
@@ -25,15 +26,20 @@ const StyledTile = styled.div`
 	}
 
 	li {
-    margin-left: 20px
+		margin-left: 20px;
 	}
 
 	h1 {
-		font-size: 40px;
+		font-size: 24px;
+		line-height: 24px;
 		font-weight: 600;
 		text-align: center;
-		line-height: 38px;
 		margin-bottom: 16px;
+
+		@media (min-width: 768px) {
+			font-size: 40px;
+			line-height: 38px;
+		}
 	}
 
 	h2 {
@@ -87,6 +93,10 @@ const ImageTile = styled.div`
 	background-position: center;
 	background-image: url(${({ background }) => background});
 	min-height: 320px;
+	margin: 0 15px 20px 10px;
+	border-radius: 6px;
+	box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
+		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04;
 
 	@media (min-width: 768px) {
 		min-height: 400px;
@@ -116,8 +126,14 @@ const TextWrapper = styled.div`
 
 	h3 {
 		font-weight: 100;
-		font-size: 22px;
 		text-align: center;
+		font-size: 18px;
+		line-height: 22px;
+		padding: 0 20px;
+
+		@media (min-width: 768px) {
+			font-size: 22px;
+		}
 	}
 
 	@media (min-width: 768px) {
@@ -136,8 +152,12 @@ const LinkWrapper = styled.div`
 `;
 
 const Asset = styled.img`
-	max-width: 500px;
+	max-width: 75%;
 	margin: 0 auto 10px;
+
+	@media (min-width: 768px) {
+		max-width: 500px;
+	}
 `;
 
 const Tile = ({

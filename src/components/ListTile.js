@@ -4,23 +4,37 @@ import RichText from '../components/RichText';
 
 const Tile = styled.section`
 	width: 100%;
-	padding-top: 100px;
+	padding: 50px 20px 0;
+
+	@media (min-width: 768px) {
+		padding-top: 100px;
+	}
 
 	ul {
 		margin-left: 20px;
 		list-style-type: circle;
-		padding-bottom: 100px;
+		padding-bottom: 50px;
+
+		@media (min-width: 768px) {
+			padding-bottom: 100px;
+		}
 
 		p {
 			font-weight: 100;
-			padding-left: 10px;
+
+			@media (min-width: 768px) {
+				padding-left: 10px;
+			}
 		}
 	}
 `;
 
 const TextWrapper = styled.div`
-	max-width: 70%;
 	margin: 0 auto;
+
+	@media (min-width: 768px) {
+		max-width: 70%;
+	}
 
 	@media (min-width: 1440px) {
 		max-width: 50%;
@@ -31,19 +45,28 @@ const TextWrapper = styled.div`
 	}
 
 	h1 {
-		font-size: 40px;
+		font-size: 26px;
 		font-weight: 600;
 		text-align: center;
-		line-height: 38px;
+		line-height: 26px;
 		margin-bottom: 16px;
-		margin-bottom: 32px;
+
+		@media (min-width: 768px) {
+			font-size: 40px;
+			line-height: 38px;
+			margin-bottom: 32px;
+		}
 	}
 
 	p {
 		font-family: gopher, sans-serif;
 		font-weight: 500;
-		font-size: 20px;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+
+		@media (min-width: 768px) {
+			font-size: 20px;
+			margin-bottom: 20px;
+		}
 	}
 `;
 

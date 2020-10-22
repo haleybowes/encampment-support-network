@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Link from '../Link';
 
 const Nav = styled.div`
-	background-color: purple;
+	background-color: white;
 	height: 80px;
 	width: 100%;
 	position: fixed;
@@ -21,15 +21,15 @@ const Nav = styled.div`
 	.hamburger-menu,
 	.hamburger-menu:after,
 	.hamburger-menu:before {
-		width: 50px;
-		height: 5px;
+		width: 40px;
+		height: 4px;
 	}
 
 	.hamburger-menu {
 		position: relative;
 		transform: translateY(25px);
-		background: rgba(255, 255, 255, 1);
-		transition: all 0ms 300ms;
+		background: #060B04;
+		transition: all 0ms 200ms;
 		border-radius: 6px;
 
 		&.animate {
@@ -41,11 +41,11 @@ const Nav = styled.div`
 		content: '';
 		position: absolute;
 		left: 0;
-		bottom: 15px;
+		bottom: 10px;
 		border-radius: 6px;
-		background: rgba(255, 255, 255, 1);
-		transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-			transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+		background: #060B04;
+		transition: bottom 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
 
 	.hamburger-menu:after {
@@ -53,24 +53,24 @@ const Nav = styled.div`
 		position: absolute;
 		border-radius: 6px;
 		left: 0;
-		top: 15px;
-		background: rgba(255, 255, 255, 1);
-		transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-			transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+		top: 10px;
+		background: #060B04;
+		transition: top 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
 
 	.hamburger-menu.animate:after {
 		top: 0;
 		transform: rotate(45deg);
-		transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
-			transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+		transition: top 200ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
 
 	.hamburger-menu.animate:before {
 		bottom: 0;
 		transform: rotate(-45deg);
-		transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
-			transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+		transition: bottom 200ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
 `;
 
@@ -90,11 +90,11 @@ const Burger = styled.button`
 const FixedMenu = styled.div`
 	width: 100%;
 	height: 100vh;
-	background: purple;
+	background: white;
 	position: fixed;
 	z-index: 100;
 	transform: translateY(${({ open }) => (open ? '0' : '-100%')});
-	transition: transform 300ms ease-out;
+	transition: transform 200ms ease-out;
 
 	@media(min-width: 769px) {
 		display: none;
