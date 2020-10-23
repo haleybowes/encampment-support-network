@@ -51,55 +51,21 @@ const StyledHero = styled.section`
 		min-height: 650px;
 		flex-direction: row;
 	}
-
-	/* a {
-		padding: 15px 30px;
-		text-decoration: none;
-		font-size: 18px;
-		display: block;
-		margin: 20px auto;
-	}
-
-	.btn,
-	.btn:link,
-	.btn:visited {
-		color: #2c3e50;
-		line-height: 1em;
-		text-decoration: none;
-		display: inline-block;
-		border-radius: 6px;
-		box-shadow: 0 0 0 0 #2c3e50 inset, 0.3em 0.2em 0 0 #bbb;
-		border: 2px solid #2c3e50;
-		padding: 0.8em;
-		text-align: center;
-		transition: 0.25s box-shadow, 0.25s transform;
-
-		&:hover {
-			box-shadow: 0 4em 0 0 #2c3e50 inset, 0em 0em 0 0 #bbb;
-			transform: translate(0.3em, 0.2em);
-			color: #fff;
-		}
-	} */
-
-	/* .button {
-		border: 1px solid #060b04;
-		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
-			6px 6px #060b04;
-		transition: 0.25s box-shadow, 0.25s transform;
-
-		&:hover {
-			box-shadow: unset;
-			transform: translate(0.3em, 0.2em);
-		}
-	} */
 `;
 
 const FloatingAsset = styled.img`
 	position: absolute;
 	bottom: 0;
 
+	@media (min-width: 768px) {
+		bottom: 241px;
+		left: -10px;
+	}
+
 	@media (min-width: 1024px) {
 		right: -280px;
+		bottom: 0;
+		left: 0;
 	}
 `;
 
@@ -129,12 +95,6 @@ const Hero = ({ logo, header, body, floatingAsset, asset }) => {
 						<img src={logo.file.url} alt="" />
 					</Logo>
 				)}
-				{/* <a href="#" class="btn">
-					Cool Button
-				</a>
-				<a href="#" class="button">
-					Cool Button
-				</a> */}
 				{header && <RichText document={header.json} />}
 				{body && <RichText document={body.json} />}
 				<FloatingAsset src={floatingAsset.file.url} />

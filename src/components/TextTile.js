@@ -24,7 +24,7 @@ const StyledTile = styled.div`
 		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04;
 
 	@media (min-width: 768px) {
-		width: ${({ component }) => (component === 'FullTextTile' ? '100%' : '47%')};
+		width: ${({ component }) => (component === 'FullTextTile' ? '100%' : '46%')};
 		margin: 0 15px 30px;
 		border-radius: 6px;
 		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
@@ -45,7 +45,9 @@ const StyledTile = styled.div`
 	}
 
 	h2 {
-		@media (min-width: 768px) {
+		line-height: 24px;
+
+		@media (min-width: 1024px) {
 			font-size: 32px;
 			line-height: 32px;
 		}
@@ -60,7 +62,7 @@ const StyledTile = styled.div`
 	p {
 		margin-bottom: 12px;
 
-		@media (min-width: 768px) {
+		@media (min-width: 1024px) {
 			font-size: 18px;
 			line-height: 24px;
 		}
@@ -77,7 +79,7 @@ const StyledTile = styled.div`
 		transition: 0.25s box-shadow, 0.25s transform;
 		padding: 10px 25px;
 
-		@media (min-width: 768px) {
+		@media (min-width: 1024px) {
 			padding: 15px 40px;
 			font-size: 20px;
 		}
@@ -114,7 +116,7 @@ const LinkWrapper = styled.div`
 	position: relative;
 	margin: 20px 0 48px 0;
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		margin: 25px 0 90px;
 		display: flex;
 		align-items: center;
@@ -133,8 +135,15 @@ const LinkWrapper = styled.div`
 `;
 
 const Asset = styled.img`
-	max-width: 500px;
 	margin: 0 auto 10px;
+
+	@media(min-width: 768px) {
+		max-width: 350px;
+	}
+
+	@media(min-width: 1024px) {
+		max-width: 500px;
+	}
 `;
 
 const TextTile = ({

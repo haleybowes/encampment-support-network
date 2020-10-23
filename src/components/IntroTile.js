@@ -35,12 +35,24 @@ const ImageWrapper = styled.div`
 	}
 
 	&:first-of-type {
-		align-items: center;
-		padding-left: 25px;
+		/* padding-left: 25px; */
+		align-items: flex-start;
+
+		@media(min-width: 768px) {
+			order: 1;
+		}
+
+		@media(min-width: 1024px) {
+			align-items: center;
+		}
 	}
 
 	&:last-of-type {
 		align-items: flex-end;
+
+		@media(min-width: 768px) {
+			order: 1;
+		}
 
 		img {
 			transform: scaleX(-1);

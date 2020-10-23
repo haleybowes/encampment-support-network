@@ -8,7 +8,6 @@ const Tile = styled.section`
 `;
 
 const TextWrapper = styled.div`
-	/* width: 50%; */
 
 	h3 {
 		font-weight: 100;
@@ -20,18 +19,15 @@ const TextWrapper = styled.div`
 		padding: 0 20px 30px;
 
 		@media (min-width: 768px) {
-			font-size: 20px;
-			line-height: 24px;
+			padding: 0 45px 30px;
 		}
 
 		@media (min-width: 1440px) {
 			font-size: 22px;
 		}
-		/* padding: 0 100px; */
 	}
 `;
 const ImageWrapper = styled.div`
-	/* width: 50%; */
 	text-align: right;
 
 	img {

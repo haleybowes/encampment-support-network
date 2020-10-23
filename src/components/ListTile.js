@@ -51,10 +51,14 @@ const TextWrapper = styled.div`
 		line-height: 26px;
 		margin-bottom: 16px;
 
-		@media (min-width: 768px) {
+		@media(min-width: 768px) {
+			margin-bottom: 32px;
+		}
+
+		@media (min-width: 1024px) {
 			font-size: 40px;
 			line-height: 38px;
-			margin-bottom: 32px;
+			
 		}
 	}
 
@@ -63,7 +67,7 @@ const TextWrapper = styled.div`
 		font-weight: 500;
 		margin-bottom: 10px;
 
-		@media (min-width: 768px) {
+		@media (min-width: 1024px) {
 			font-size: 20px;
 			margin-bottom: 20px;
 		}

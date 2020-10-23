@@ -36,7 +36,12 @@ const StyledTile = styled.div`
 		text-align: center;
 		margin-bottom: 16px;
 
-		@media (min-width: 768px) {
+		@media(min-width: 768px) {
+			font-size: 28px;
+			line-height: 28px;
+		}
+
+		@media (min-width: 1024px) {
 			font-size: 40px;
 			line-height: 38px;
 		}
@@ -100,9 +105,8 @@ const ImageTile = styled.div`
 
 	@media (min-width: 768px) {
 		min-height: 400px;
-		width: 47%;
-		margin: 0 20px;
-		border-radius: 6px;
+		width: 46%;
+		margin: 0 15px 30px;
 		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
 			6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04, 9px 9px #060b04, 10px 10px #060b04,
 			11px 11px #060b04, 12px 12px #060b04;
@@ -131,13 +135,17 @@ const TextWrapper = styled.div`
 		line-height: 22px;
 		padding: 0 20px;
 
-		@media (min-width: 768px) {
+		@media(min-width: 768px) {
+			padding: 0 35px;
+		}
+
+		@media (min-width: 1024px) {
 			font-size: 22px;
 		}
 	}
 
 	@media (min-width: 768px) {
-		max-width: ${({ component }) => (component === 'HalfTile' ? 'none' : '50%')};
+		max-width: ${({ component }) => (component === 'HalfTile' ? 'none' : '60%')};
 	}
 
 	@media (min-width: 1024px) {
@@ -155,7 +163,11 @@ const Asset = styled.img`
 	max-width: 75%;
 	margin: 0 auto 10px;
 
-	@media (min-width: 768px) {
+	@media(min-width: 768px) {
+		max-width: 350px;
+	}
+
+	@media(min-width: 1024px) {
 		max-width: 500px;
 	}
 `;
