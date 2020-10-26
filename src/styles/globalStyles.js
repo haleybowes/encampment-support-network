@@ -18,9 +18,16 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		margin: 0;
 		padding: 0;
-		/* background-color: #E3CE60; */
 		/* background-color: #202020; */
-		background-color: #FBFBFB;
+		/* background-color: #E3CE60; */
+		background-color: #010754;
+		background-color: #A7C442;
+		background-color: #C89220;
+		/* background-color: #202020; */
+		background-color: #CC7E1C;
+		background-color: #C89220;
+		/* background-color: #202020; */
+		/* background-color: #F83A11; */
 	}
 
 	h1, h2, h3, p {
@@ -28,7 +35,9 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		-webkit-font-smoothing: antialiased;
 		color: #060B04;
-		/* color: #FBFBFB; */
+		color: #010754;
+		/* color: #A7C442; */
+		/* color: #F6F6EB; */
 	}
 
 	h3 {

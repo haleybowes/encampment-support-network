@@ -63,12 +63,6 @@ export const query = graphql`
 							url
 						}
 					}
-					secondaryAsset {
-						id
-						file {
-							url
-						}
-					}
 				}
 			}
 		}

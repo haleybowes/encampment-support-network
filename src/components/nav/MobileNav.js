@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Link from '../Link';
 
 const Nav = styled.div`
-	background-color: white;
+	background-color: #E3CE60;
 	height: 80px;
 	width: 100%;
 	position: fixed;
@@ -90,11 +90,19 @@ const Burger = styled.button`
 const FixedMenu = styled.div`
 	width: 100%;
 	height: 100vh;
-	background: white;
+	background: #E3CE60;
 	position: fixed;
 	z-index: 100;
 	transform: translateY(${({ open }) => (open ? '0' : '-100%')});
 	transition: transform 200ms ease-out;
+
+	a {
+		color: #060B04;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
 	@media(min-width: 769px) {
 		display: none;

@@ -8,23 +8,27 @@ const Tile = styled.section`
 `;
 
 const TextWrapper = styled.div`
+	max-width: 500px;
+	padding: 0 20px 30px;
+	margin: 0 auto;
+	text-align: center;
+
+	@media (min-width: 768px) {
+		padding: 0 45px 30px;
+	}
+
+	@media (min-width: 1440px) {
+		font-size: 22px;
+		line-height: 26px;
+	}
 
 	h3 {
 		font-weight: 100;
-		text-align: center;
-		margin: 0 auto;
-		max-width: 500px;
+		display: inline;
+		color: #f6f6eb;
+		background-color: #F83A11;
 		font-size: 18px;
-		line-height: 22px;
-		padding: 0 20px 30px;
-
-		@media (min-width: 768px) {
-			padding: 0 45px 30px;
-		}
-
-		@media (min-width: 1440px) {
-			font-size: 22px;
-		}
+		line-height: 24px;
 	}
 `;
 const ImageWrapper = styled.div`

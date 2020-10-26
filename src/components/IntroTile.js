@@ -25,6 +25,11 @@ const Body = styled.div`
 	@media(min-width: 768px) {
 		width: 50%;
 	}
+
+	@media(min-width: 1024px) {
+		order: 1;
+		padding: 100px 20px;
+	}
 `;
 
 const ImageWrapper = styled.div`
@@ -35,27 +40,26 @@ const ImageWrapper = styled.div`
 	}
 
 	&:first-of-type {
-		/* padding-left: 25px; */
 		align-items: flex-start;
+		padding: 20px;
 
 		@media(min-width: 768px) {
 			order: 1;
+			align-items: center;
+			padding: 0;
 		}
 
 		@media(min-width: 1024px) {
-			align-items: center;
+			padding: 20px;
 		}
 	}
 
 	&:last-of-type {
 		align-items: flex-end;
+		padding-left: 35px;
 
 		@media(min-width: 768px) {
 			order: 1;
-		}
-
-		img {
-			transform: scaleX(-1);
 		}
 	}
 

@@ -22,11 +22,15 @@ const Text = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	order: 1;
-	padding: 30px 20px;
+	padding: 50px 20px;
+
+	@media (min-width: 768px) {
+		padding: 50px 80px;
+	}
 
 	@media (min-width: 1024px) {
 		width: 50%;
-		padding: 0 150px 0 50px;
+		padding: 0 50px 0 130px;
 	}
 
 	h1 {
@@ -38,7 +42,8 @@ const Text = styled.div`
 
 		@media (min-width: 1024px) {
 			font-size: 36px;
-			margin-bottom: 1rem;
+			line-height: 32px;
+			margin-bottom: 2rem;
 		}
 	}
 `;
@@ -57,15 +62,20 @@ const FloatingAsset = styled.img`
 	position: absolute;
 	bottom: 0;
 
+	@media (max-width: 767px) {
+		display: none;
+	}
+
 	@media (min-width: 768px) {
-		bottom: 241px;
+		bottom: 301px;
 		left: -10px;
 	}
 
 	@media (min-width: 1024px) {
 		right: -280px;
-		bottom: 0;
-		left: 0;
+		bottom: -5px;
+		left: -120px;
+		height: 100%;
 	}
 `;
 

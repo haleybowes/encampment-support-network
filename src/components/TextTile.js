@@ -16,10 +16,30 @@ const Logo = styled.div`
 const StyledTile = styled.div`
 	display: flex;
 	flex-direction: column;
+	color: #202020;
 	justify-content: space-between;
-	background-color: lightgrey;
+
+	&:nth-of-type(even) {
+		background: #010754;
+
+		h2, p {
+			color: #A7C442;
+		}
+
+		a {
+			background: #010754;
+			color: #A7C442;
+			border: 1px solid #A7C442;
+		}
+	}
+	/* background-color: ${({ backgroundColour }) => backgroundColour}; */
+	background-color: #c89220;
+	background-color: #cc7e1c;
+	background-color: #BD7001;
+	/* background-color: #010754; */
 	margin: 0 15px 20px 10px;
 	border-radius: 6px;
+	/* border: 1px solid #060b04; */
 	box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
 		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04;
 
@@ -30,10 +50,21 @@ const StyledTile = styled.div`
 		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
 			6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04, 9px 9px #060b04, 10px 10px #060b04,
 			11px 11px #060b04, 12px 12px #060b04;
+
+		/* border: 1px solid #2928ce; */
+		box-shadow: 1px 1px #2928ce, 2px 2px #2928ce, 3px 3px #2928ce, 4px 4px #2928ce, 5px 5px #2928ce,
+			6px 6px #2928ce, 7px 7px #2928ce, 8px 8px #2928ce, 9px 9px #2928ce, 10px 10px #2928ce,
+			11px 11px #2928ce, 12px 12px #2928ce;
 	}
 
 	@media (min-width: 1440px) {
-		margin: 0 20px 50px;
+		margin: ${({ component }) => (component === 'FullTextTile' ? '0 30px 50px' : '0 20px 50px')};
+	}
+
+	h2,
+	p {
+		color: #010754;
+		/* color: #A7C442; */
 	}
 
 	h1 {
@@ -70,18 +101,33 @@ const StyledTile = styled.div`
 
 	a {
 		color: #060b04;
-		letter-spacing: 0.5px;
+		display: inline-block;
+		background-color: ${({ backgroundColour }) => backgroundColour};
 		border-radius: 5px;
-		font-weight: 500;
 		border: 1px solid #060b04;
 		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
 			6px 6px #060b04;
 		transition: 0.25s box-shadow, 0.25s transform;
 		padding: 10px 25px;
+		background-color: #cc7e1c;
+		background-color: #BD7001;
+
+		/* border: 1px solid #2928ce;
+		box-shadow: 1px 1px #F83A11, 2px 2px #F83A11, 3px 3px #F83A11, 4px 4px #F83A11, 5px 5px #F83A11,
+			6px 6px #F83A11; */
+
+		border: 1px solid #010754;
+		box-shadow: 1px 1px #f83a11, 2px 2px #f83a11, 3px 3px #f83a11, 4px 4px #f83a11, 5px 5px #f83a11,
+			6px 6px #f83a11;
+		color: #010754;
+
+		/* background-color: #010754; 
+		border: 1px solid #A7C442;
+		color: #A7C442; */
 
 		@media (min-width: 1024px) {
 			padding: 15px 40px;
-			font-size: 20px;
+			/* font-size: 20px; */
 		}
 
 		&:hover {
@@ -91,8 +137,15 @@ const StyledTile = styled.div`
 	}
 `;
 
-const Image = styled.img`
-	max-width: 100%;
+const ImageWrapper = styled.div`
+	/* max-width: 100%; */
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	img {
+		width: 100%;
+	}
 `;
 
 const TextWrapper = styled.div`
@@ -127,6 +180,10 @@ const LinkWrapper = styled.div`
 		display: inline-block;
 		margin-top: 30px;
 
+		@media (min-width: 376px) and (max-width: 425px) {
+			margin-left: 10px;
+		}
+
 		@media (min-width: 768px) {
 			margin-left: 25px;
 			margin-top: 0;
@@ -137,11 +194,11 @@ const LinkWrapper = styled.div`
 const Asset = styled.img`
 	margin: 0 auto 10px;
 
-	@media(min-width: 768px) {
+	@media (min-width: 768px) {
 		max-width: 350px;
 	}
 
-	@media(min-width: 1024px) {
+	@media (min-width: 1024px) {
 		max-width: 500px;
 	}
 `;
@@ -155,12 +212,10 @@ const TextTile = ({
 	secondaryLink,
 	asset,
 	logo,
-	floatingAsset,
 	secondaryAsset,
 }) => {
-	console.log(primaryLink, secondaryLink);
 	return (
-		<StyledTile component={component}>
+		<StyledTile backgroundColour={backgroundColour} component={component}>
 			<TextWrapper component={component}>
 				{logo && (
 					<Logo>
@@ -171,13 +226,20 @@ const TextTile = ({
 				{header && <RichText document={header.json} />}
 				{body && <RichText document={body.json} />}
 				{(primaryLink || secondaryLink) && (
-					<LinkWrapper>
+					<LinkWrapper backgroundColour={backgroundColour}>
 						{primaryLink && <Link link={primaryLink} />}
 						{secondaryLink && <Link link={secondaryLink} />}
 					</LinkWrapper>
 				)}
 			</TextWrapper>
-			{asset && <Image src={asset.file.url} />}
+			{asset && (
+				<ImageWrapper>
+					<img src={asset.file.url} alt="" />
+				</ImageWrapper>
+				// <Image>
+
+				// </Image>
+			)}
 		</StyledTile>
 	);
 };

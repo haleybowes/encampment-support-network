@@ -4,15 +4,6 @@ import styled from 'styled-components';
 import RichText from '../components/RichText';
 import Link from '../components/Link';
 
-const Logo = styled.div`
-	text-align: center;
-	margin-bottom: 10px;
-
-	img {
-		max-width: 130px;
-	}
-`;
-
 const StyledTile = styled.div`
 	width: 100%;
 	padding: 50px 10px;
@@ -36,7 +27,7 @@ const StyledTile = styled.div`
 		text-align: center;
 		margin-bottom: 16px;
 
-		@media(min-width: 768px) {
+		@media (min-width: 768px) {
 			font-size: 28px;
 			line-height: 28px;
 		}
@@ -50,12 +41,6 @@ const StyledTile = styled.div`
 	h2 {
 		font-size: 32px;
 		line-height: 32px;
-	}
-
-	h3 {
-		&:last-of-type {
-			margin-bottom: 10px;
-		}
 	}
 
 	p {
@@ -95,21 +80,33 @@ const StyledTile = styled.div`
 const ImageTile = styled.div`
 	width: 100%;
 	background-size: cover;
+	/* border: 1px solid #060b04; */
 	background-position: center;
 	background-image: url(${({ background }) => background});
 	min-height: 320px;
-	margin: 0 15px 20px 10px;
+	/* margin: 0 15px 20px 10px; */
 	border-radius: 6px;
-	box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
-		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04;
+	/* box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
+		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04; */
 
 	@media (min-width: 768px) {
 		min-height: 400px;
-		width: 46%;
-		margin: 0 15px 30px;
-		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
+		max-height: 500px;
+		width: calc(50% - 10px);
+		margin: 0 5px
+		/* margin: 0 15px 30px; */
+		/* box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
 			6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04, 9px 9px #060b04, 10px 10px #060b04,
 			11px 11px #060b04, 12px 12px #060b04;
+
+		box-shadow: 1px 1px #2928ce, 2px 2px #2928ce, 3px 3px #2928ce, 4px 4px #2928ce, 5px 5px #2928ce,
+			6px 6px #2928ce, 7px 7px #2928ce, 8px 8px #2928ce, 9px 9px #2928ce, 10px 10px #2928ce,
+			11px 11px #2928ce, 12px 12px #2928ce; */
+
+		/* border: 1px solid #2928CE;
+		box-shadow: 1px 1px #2928CE, 2px 2px #2928CE, 3px 3px #2928CE, 4px 4px #2928CE, 5px 5px #2928CE,
+			6px 6px #2928CE, 7px 7px #2928CE, 8px 8px #2928CE, 9px 9px #2928CE, 10px 10px #2928CE,
+			11px 11px #2928CE, 12px 12px #2928CE; */
 	}
 
 	@media (min-width: 1024px) {
@@ -123,33 +120,33 @@ const Image = styled.img`
 
 const TextWrapper = styled.div`
 	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	text-align: center;
 	height: 100%;
+	padding: 0 20px;
+
+	@media (min-width: 768px) {
+		padding: 0 35px;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 22px;
+		line-height: 26px;
+		max-width: 500px;
+		margin: 30px auto 0;
+	}
 
 	h3 {
 		font-weight: 100;
-		text-align: center;
+		display: inline;
+		background-color: #f6f6eb;
 		font-size: 18px;
-		line-height: 22px;
-		padding: 0 20px;
-
-		@media(min-width: 768px) {
-			padding: 0 35px;
-		}
-
-		@media (min-width: 1024px) {
-			font-size: 22px;
-		}
+		line-height: 24px;
+		color: #f6f6eb;
+		background-color: #F83A11;
 	}
 
 	@media (min-width: 768px) {
 		max-width: ${({ component }) => (component === 'HalfTile' ? 'none' : '60%')};
-	}
-
-	@media (min-width: 1024px) {
-		/* padding: 70px 70px 0 70px; */
 	}
 `;
 
@@ -163,11 +160,11 @@ const Asset = styled.img`
 	max-width: 75%;
 	margin: 0 auto 10px;
 
-	@media(min-width: 768px) {
+	@media (min-width: 768px) {
 		max-width: 350px;
 	}
 
-	@media(min-width: 1024px) {
+	@media (min-width: 1024px) {
 		max-width: 500px;
 	}
 `;
@@ -180,8 +177,6 @@ const Tile = ({
 	primaryLink,
 	secondaryLink,
 	asset,
-	logo,
-	floatingAsset,
 	secondaryAsset,
 }) => {
 	return (

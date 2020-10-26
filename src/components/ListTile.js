@@ -14,6 +14,7 @@ const Tile = styled.section`
 		margin-left: 20px;
 		list-style-type: circle;
 		padding-bottom: 50px;
+		color: #f6f6eb;
 
 		@media (min-width: 768px) {
 			padding-bottom: 100px;

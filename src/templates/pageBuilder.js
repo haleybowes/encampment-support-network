@@ -14,9 +14,12 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	/* padding: 5px; */
 	max-width: 1440px;
 	margin: 80px auto 0;
+
+	@media(min-width: 1024px) {
+		justify-content: space-around;
+	}
 `;
 
 const StyledPage = styled.div``;
