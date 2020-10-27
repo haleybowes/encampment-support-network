@@ -171,6 +171,10 @@ const Asset = styled.img`
 
 const BodyWrapper = styled.div`
 	@media (min-width: 1024px) {
+		padding: 50px 80px 0;
+	}
+
+	@media (min-width: 1440px) {
 		padding: 50px 160px 0;
 	}
 `;
