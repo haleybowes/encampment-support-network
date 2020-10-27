@@ -20,28 +20,31 @@ const StyledTile = styled.div`
 	justify-content: space-between;
 
 	&:nth-of-type(even) {
-		background: #010754;
+		background: ${({ background }) => !background && '#010754'};
 
-		h2, p {
-			color: #A7C442;
+		h2,
+		p {
+			color: #a7c442;
 		}
 
 		a {
 			background: #010754;
-			color: #A7C442;
-			border: 1px solid #A7C442;
+			color: #a7c442;
+			border: 1px solid #a7c442;
 		}
 	}
 	/* background-color: ${({ backgroundColour }) => backgroundColour}; */
 	background-color: #c89220;
 	background-color: #cc7e1c;
-	background-color: #BD7001;
+	background-color: #bd7001;
 	/* background-color: #010754; */
 	margin: 0 15px 20px 10px;
 	border-radius: 6px;
 	/* border: 1px solid #060b04; */
 	box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
 		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04;
+	background-image: url(${({ background }) => background});
+	background-size: cover;
 
 	@media (min-width: 768px) {
 		width: ${({ component }) => (component === 'FullTextTile' ? '100%' : '46%')};
@@ -64,7 +67,6 @@ const StyledTile = styled.div`
 	h2,
 	p {
 		color: #010754;
-		/* color: #A7C442; */
 	}
 
 	h1 {
@@ -110,7 +112,7 @@ const StyledTile = styled.div`
 		transition: 0.25s box-shadow, 0.25s transform;
 		padding: 10px 25px;
 		background-color: #cc7e1c;
-		background-color: #BD7001;
+		background-color: #bd7001;
 
 		/* border: 1px solid #2928ce;
 		box-shadow: 1px 1px #F83A11, 2px 2px #F83A11, 3px 3px #F83A11, 4px 4px #F83A11, 5px 5px #F83A11,
@@ -214,8 +216,13 @@ const TextTile = ({
 	logo,
 	secondaryAsset,
 }) => {
+	console.log(header, asset);
 	return (
-		<StyledTile backgroundColour={backgroundColour} component={component}>
+		<StyledTile
+			background={!header && !body && asset.file.url}
+			backgroundColour={backgroundColour}
+			component={component}
+		>
 			<TextWrapper component={component}>
 				{logo && (
 					<Logo>
@@ -232,13 +239,10 @@ const TextTile = ({
 					</LinkWrapper>
 				)}
 			</TextWrapper>
-			{asset && (
+			{asset && header && (
 				<ImageWrapper>
 					<img src={asset.file.url} alt="" />
 				</ImageWrapper>
-				// <Image>
-
-				// </Image>
 			)}
 		</StyledTile>
 	);

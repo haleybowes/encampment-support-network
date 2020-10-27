@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
 
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';

@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: 1440px;
-	margin: 80px auto 0;
+	margin: 0 auto;
 
 	@media(min-width: 1024px) {
 		justify-content: space-around;
@@ -26,10 +26,13 @@ const StyledPage = styled.div``;
 const PageBuilder = ({ content }) => {
 	if (!content) return null;
 
+	const hero = content.find(section => section.component === 'Hero');
+	console.log(hero);
 	return (
 		<StyledPage>
 			<GlobalStyle />
 			<Nav />
+			<Hero {...hero} />
 			<Wrapper>
 				{content.map((child) => {
 					switch (child.component) {
@@ -37,8 +40,6 @@ const PageBuilder = ({ content }) => {
 							return <SplitTile key={child.id} {...child} />
 						case 'ListTile':
 							return <ListTile key={child.id} {...child} />
-						case 'Hero':
-							return <Hero key={child.id} {...child} />;
 						case 'HalfTile':
 						case 'FullTile':
 							return <Tile key={child.id} {...child} />;

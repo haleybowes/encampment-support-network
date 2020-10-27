@@ -93,7 +93,7 @@ const ImageTile = styled.div`
 		min-height: 400px;
 		max-height: 500px;
 		width: calc(50% - 10px);
-		margin: 0 5px
+		margin: 0 5px;
 		/* margin: 0 15px 30px; */
 		/* box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
 			6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04, 9px 9px #060b04, 10px 10px #060b04,
@@ -142,7 +142,7 @@ const TextWrapper = styled.div`
 		font-size: 18px;
 		line-height: 24px;
 		color: #f6f6eb;
-		background-color: #F83A11;
+		background-color: #f83a11;
 	}
 
 	@media (min-width: 768px) {
@@ -169,6 +169,12 @@ const Asset = styled.img`
 	}
 `;
 
+const BodyWrapper = styled.div`
+	@media (min-width: 768px) {
+		padding: 50px 160px 0;
+	}
+`;
+
 const Tile = ({
 	backgroundColour,
 	component,
@@ -188,7 +194,11 @@ const Tile = ({
 					<TextWrapper component={component}>
 						{secondaryAsset && <Asset src={secondaryAsset.file.url} alt="" />}
 						{header && <RichText document={header.json} />}
-						{body && <RichText document={body.json} />}
+						{body && (
+							<BodyWrapper>
+								<RichText document={body.json} />
+							</BodyWrapper>
+						)}
 						{primaryLink && (
 							<LinkWrapper>
 								{primaryLink && <Link link={primaryLink} />}
