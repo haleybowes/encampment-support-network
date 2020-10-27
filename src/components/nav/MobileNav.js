@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Link from '../Link';
 
 const Nav = styled.div`
-	background-color: #E3CE60;
+	background-color: #C89220;
 	height: 80px;
 	width: 100%;
 	position: fixed;
@@ -28,7 +28,7 @@ const Nav = styled.div`
 	.hamburger-menu {
 		position: relative;
 		transform: translateY(25px);
-		background: #060B04;
+		background: #010754;
 		transition: all 0ms 200ms;
 		border-radius: 6px;
 
@@ -43,7 +43,7 @@ const Nav = styled.div`
 		left: 0;
 		bottom: 10px;
 		border-radius: 6px;
-		background: #060B04;
+		background: #010754;
 		transition: bottom 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1),
 			transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
@@ -54,7 +54,7 @@ const Nav = styled.div`
 		border-radius: 6px;
 		left: 0;
 		top: 10px;
-		background: #060B04;
+		background: #010754;
 		transition: top 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1),
 			transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
@@ -90,14 +90,14 @@ const Burger = styled.button`
 const FixedMenu = styled.div`
 	width: 100%;
 	height: 100vh;
-	background: #E3CE60;
+	background-color: #C89220;
 	position: fixed;
 	z-index: 100;
 	transform: translateY(${({ open }) => (open ? '0' : '-100%')});
 	transition: transform 200ms ease-out;
 
 	a {
-		color: #060B04;
+		color: #010754;
 
 		&:hover {
 			text-decoration: underline;

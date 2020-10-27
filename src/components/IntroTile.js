@@ -22,12 +22,11 @@ const Body = styled.div`
 		margin-bottom: 15px;
 	}
 
-	@media(min-width: 768px) {
+	@media (min-width: 768px) {
 		width: 50%;
 	}
 
-	@media(min-width: 1024px) {
-		order: 1;
+	@media (min-width: 1024px) {
 		padding: 100px 20px;
 	}
 `;
@@ -39,17 +38,20 @@ const ImageWrapper = styled.div`
 		width: 25%;
 	}
 
+	@media (max-width: 768px) {
+		text-align: right;
+	}
+
 	&:first-of-type {
 		align-items: flex-start;
 		padding: 20px;
 
-		@media(min-width: 768px) {
-			order: 1;
+		@media (min-width: 768px) {
 			align-items: center;
 			padding: 0;
 		}
 
-		@media(min-width: 1024px) {
+		@media (min-width: 1024px) {
 			padding: 20px;
 		}
 	}
@@ -57,14 +59,14 @@ const ImageWrapper = styled.div`
 	&:last-of-type {
 		align-items: flex-end;
 		padding-left: 35px;
-
-		@media(min-width: 768px) {
-			order: 1;
-		}
 	}
 
 	img {
 		max-width: 100%;
+
+		@media (max-width: 768px) {
+			max-width: 500px;
+		}
 	}
 `;
 

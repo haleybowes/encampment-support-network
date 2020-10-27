@@ -70,15 +70,18 @@ const Asset = styled.div`
 	background-size: cover;
 	background-position: center;
 	margin: 5px;
+	margin-top: 80px;
 
 	@media (max-width: 1023px) {
 		height: 525px;
 	}
 
+	@media (min-width: 768px) {
+		min-height: 700px;
+	}
+
 	@media (min-width: 1024px) {
 		width: 50%;
-		margin-top: 80px;
-		min-height: 700px;
 	}
 `;
 

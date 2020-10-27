@@ -19,6 +19,14 @@ const StyledTile = styled.div`
 	color: #202020;
 	justify-content: space-between;
 
+	@media (max-width: 475px) {
+		width: 100%;
+
+		div {
+			height: ${({ background }) => background && '350px'};
+		}
+	}
+
 	&:nth-of-type(even) {
 		background: ${({ background }) => !background && '#010754'};
 
@@ -33,28 +41,22 @@ const StyledTile = styled.div`
 			border: 1px solid #a7c442;
 		}
 	}
-	/* background-color: ${({ backgroundColour }) => backgroundColour}; */
+
 	background-color: #c89220;
 	background-color: #cc7e1c;
 	background-color: #bd7001;
-	/* background-color: #010754; */
 	margin: 0 15px 20px 10px;
 	border-radius: 6px;
-	/* border: 1px solid #060b04; */
-	box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
-		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04;
+	box-shadow: 1px 1px #2928ce, 2px 2px #2928ce, 3px 3px #2928ce, 4px 4px #2928ce, 5px 5px #2928ce,
+		6px 6px #2928ce, 7px 7px #2928ce, 8px 8px #2928ce;
 	background-image: url(${({ background }) => background});
 	background-size: cover;
+	background-position: center;
 
 	@media (min-width: 768px) {
 		width: ${({ component }) => (component === 'FullTextTile' ? '100%' : '46%')};
 		margin: 0 15px 30px;
 		border-radius: 6px;
-		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
-			6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04, 9px 9px #060b04, 10px 10px #060b04,
-			11px 11px #060b04, 12px 12px #060b04;
-
-		/* border: 1px solid #2928ce; */
 		box-shadow: 1px 1px #2928ce, 2px 2px #2928ce, 3px 3px #2928ce, 4px 4px #2928ce, 5px 5px #2928ce,
 			6px 6px #2928ce, 7px 7px #2928ce, 8px 8px #2928ce, 9px 9px #2928ce, 10px 10px #2928ce,
 			11px 11px #2928ce, 12px 12px #2928ce;
