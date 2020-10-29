@@ -21,8 +21,8 @@ const StyledTile = styled.div`
 	}
 
 	h1 {
-		font-size: 24px;
-		line-height: 24px;
+		font-size: 26px;
+		line-height: 26px;
 		font-weight: 600;
 		text-align: center;
 		margin-bottom: 16px;
@@ -171,11 +171,11 @@ const Asset = styled.img`
 
 const BodyWrapper = styled.div`
 	@media (min-width: 1024px) {
-		padding: 50px 80px 0;
+		padding: 20px 80px 0;
 	}
 
 	@media (min-width: 1440px) {
-		padding: 50px 160px 0;
+		padding: 20px 160px 0;
 	}
 `;
 

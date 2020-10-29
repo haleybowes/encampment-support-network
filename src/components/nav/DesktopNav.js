@@ -55,13 +55,7 @@ const StyledList = styled.ul`
 					letter-spacing: 0.5px;
 					border-radius: 5px;
 					padding: 15px 30px;
-					border: 1px solid #060b04;
-					box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04,
-						5px 5px #060b04, 6px 6px #060b04;
-					box-shadow: 1px 1px #f83a11, 2px 2px #f83a11, 3px 3px #f83a11, 4px 4px #f83a11,
-						5px 5px #f83a11, 6px 6px #f83a11;
 					transition: 0.25s box-shadow, 0.25s transform;
-					background-color: #f6f6eb;
 					background-color: #c89220;
 					border: 1px solid #010754;
 					box-shadow: 1px 1px #f83a11, 2px 2px #f83a11, 3px 3px #f83a11, 4px 4px #f83a11,
@@ -76,8 +70,16 @@ const StyledList = styled.ul`
 			}
 
 			&:nth-of-type(2) {
-				a:hover {
-					text-decoration: underline;
+				a {
+					span {
+						transition: color 200ms ease-out, background 200ms ease-out;
+
+						&:hover,
+						&:focus {
+							background: #f83a11;
+							color: #f6f6eb;
+						}
+					}
 				}
 			}
 
@@ -87,6 +89,18 @@ const StyledList = styled.ul`
 				padding: 15px 30px;
 				display: inline-block;
 				text-align: center;
+			}
+		}
+	}
+
+	&:nth-of-type(2) {
+		a {
+			display: block;
+			transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+			&:hover {
+				transform: translateY(-2px);
+				opacity: 0.8;
 			}
 		}
 	}

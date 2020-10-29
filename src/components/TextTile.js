@@ -108,30 +108,16 @@ const StyledTile = styled.div`
 		display: inline-block;
 		background-color: ${({ backgroundColour }) => backgroundColour};
 		border-radius: 5px;
-		border: 1px solid #060b04;
-		box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
-			6px 6px #060b04;
 		transition: 0.25s box-shadow, 0.25s transform;
 		padding: 10px 25px;
-		background-color: #cc7e1c;
 		background-color: #bd7001;
-
-		/* border: 1px solid #2928ce;
-		box-shadow: 1px 1px #F83A11, 2px 2px #F83A11, 3px 3px #F83A11, 4px 4px #F83A11, 5px 5px #F83A11,
-			6px 6px #F83A11; */
-
 		border: 1px solid #010754;
 		box-shadow: 1px 1px #f83a11, 2px 2px #f83a11, 3px 3px #f83a11, 4px 4px #f83a11, 5px 5px #f83a11,
 			6px 6px #f83a11;
 		color: #010754;
 
-		/* background-color: #010754; 
-		border: 1px solid #A7C442;
-		color: #A7C442; */
-
 		@media (min-width: 1024px) {
 			padding: 15px 40px;
-			/* font-size: 20px; */
 		}
 
 		&:hover {
@@ -142,7 +128,6 @@ const StyledTile = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-	/* max-width: 100%; */
 	width: 100%;
 	height: 100%;
 	text-align: center;
@@ -218,7 +203,6 @@ const TextTile = ({
 	logo,
 	secondaryAsset,
 }) => {
-	console.log(header, asset);
 	return (
 		<StyledTile
 			background={!header && !body && asset.file.url}

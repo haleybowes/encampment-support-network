@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Link from '../Link';
 
 const Nav = styled.div`
-	background-color: #C89220;
+	background-color: #c89220;
 	height: 80px;
 	width: 100%;
 	position: fixed;
@@ -14,7 +14,7 @@ const Nav = styled.div`
 	display: flex;
 	justify-content: space-between;
 
-	@media(min-width: 769px) {
+	@media (min-width: 769px) {
 		display: none;
 	}
 
@@ -90,7 +90,7 @@ const Burger = styled.button`
 const FixedMenu = styled.div`
 	width: 100%;
 	height: 100vh;
-	background-color: #C89220;
+	background-color: #c89220;
 	position: fixed;
 	z-index: 100;
 	transform: translateY(${({ open }) => (open ? '0' : '-100%')});
@@ -98,13 +98,16 @@ const FixedMenu = styled.div`
 
 	a {
 		color: #010754;
+		transition: color 200ms ease-out, background 200ms ease-out;
 
-		&:hover {
-			text-decoration: underline;
+		&:hover,
+		&:focus {
+			background: #f83a11;
+			color: #f6f6eb;
 		}
 	}
 
-	@media(min-width: 769px) {
+	@media (min-width: 769px) {
 		display: none;
 	}
 `;
@@ -120,6 +123,17 @@ const SocialLinks = styled.ul`
 	list-style-type: none;
 	height: 100%;
 	align-items: center;
+
+	a {
+		height: 100%;
+		display: block;
+		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+		&:hover {
+			transform: translateY(-2px);
+			opacity: 0.8;
+		}
+	}
 
 	li:last-of-type {
 		margin-left: 10px;
@@ -143,16 +157,49 @@ const StyledList = styled.ul`
 	li {
 		margin-bottom: 20px;
 		font-size: 24px;
-
 	}
 `;
 
 const MobileNav = ({ content: { logoLink, socialLinks, textLinks } }) => {
 	const [open, setOpened] = useState(false);
+
+	useEffect(() => {
+		document.addEventListener('keydown', handleKeyDown);
+
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+		};
+	}, []);
+
+	const handleKeyDown = (e) => {
+		const focusableElements = document.querySelectorAll('.burger-menu, .mobile-nav a, .fixed-menu a');
+		const firstFocusableElement = focusableElements[0];
+		const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+		console.log(focusableElements);
+		if (e.code === 'Escape') {
+			const burgerMenu = document.querySelector('.burger-menu');
+			console.log(burgerMenu, 'getting here');
+			setOpened(false);
+			e.stopPropagation();
+			burgerMenu.focus();
+		}
+
+		if (e.shiftKey) {
+			if (document.activeElement === firstFocusableElement) {
+				lastFocusableElement.focus();
+				e.preventDefault();
+			}
+		} else if (document.activeElement === lastFocusableElement) {
+			firstFocusableElement.focus();
+			e.preventDefault();
+		}
+	};
+
 	return (
 		<>
-			<Nav>
-				<Burger onClick={() => setOpened(!open)}>
+			<Nav className="mobile-nav">
+				<Burger className="burger-menu" onClick={() => setOpened(!open)}>
 					<div className={`hamburger-menu ${open ? 'animate' : ''}`} />
 				</Burger>
 				{logoLink && (
@@ -170,7 +217,7 @@ const MobileNav = ({ content: { logoLink, socialLinks, textLinks } }) => {
 					</SocialLinks>
 				)}
 			</Nav>
-			<FixedMenu open={open}>
+			<FixedMenu className="fixed-menu" open={open}>
 				{textLinks && (
 					<StyledList>
 						{textLinks.map((link) => (

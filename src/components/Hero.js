@@ -8,10 +8,11 @@ const Logo = styled.div`
 	margin-bottom: 10px;
 
 	img {
-		max-width: 100px;
+		max-width: 100%;
+		width: 300px;
 
-		@media (min-width: 1024px) {
-			max-width: 130px;
+		@media (min-width: 1440px) {
+			width: 350px;
 		}
 	}
 `;
@@ -30,7 +31,11 @@ const Text = styled.div`
 
 	@media (min-width: 1024px) {
 		width: 50%;
-		padding: 0 70px;
+		padding: 0 20px;
+	}
+
+	@media (min-width: 1024px) {
+		padding: 0 40px;
 	}
 
 	h1 {
@@ -39,18 +44,22 @@ const Text = styled.div`
 		text-align: center;
 		font-size: 28px;
 		line-height: 28px;
+		font-size: 60px;
+		line-height: 55px;
+		position: relative;
 
-		@media (min-width: 1024px) {
+		@media (min-width: 768px) {
+			font-size: 70px;
+			line-height: 65px;
+		}
+
+		@media (min-width: 1440px) {
 			font-size: 36px;
 			line-height: 32px;
 			margin-bottom: 2rem;
+			font-size: 80px;
+			line-height: 72px;
 		}
-	}
-
-	p span {
-		display: inline;
-		background-color: #F83A11;
-		color: #f6f6eb;
 	}
 `;
 
@@ -70,7 +79,7 @@ const Asset = styled.div`
 	background-size: cover;
 	background-position: center;
 	margin: 5px;
-	margin-top: 80px;
+	margin-top: 85px;
 
 	@media (max-width: 1023px) {
 		height: 525px;
@@ -85,18 +94,18 @@ const Asset = styled.div`
 	}
 `;
 
-const Hero = ({ logo, header, body, asset }) => {
-	console.log(asset);
+const Hero = ({ logo, header, body, asset, floatingAsset }) => {
+	console.log(logo);
 	return (
 		<StyledHero>
 			<Text>
-				{logo && (
+				{/* {logo && (
 					<Logo>
 						<img src={logo.file.url} alt="" />
 					</Logo>
-				)}
+				)} */}
 				{header && <RichText document={header.json} />}
-				{body && <RichText document={body.json} />}
+				{/* {body && <RichText document={body.json} />} */}
 			</Text>
 			<Asset backgroundImage={asset.file.url} />
 		</StyledHero>

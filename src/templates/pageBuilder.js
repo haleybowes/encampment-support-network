@@ -9,13 +9,14 @@ import TextTile from '../components/TextTile';
 import Hero from '../components/Hero';
 import ListTile from '../components/ListTile';
 import SplitTile from '../components/SplitTile';
+import Footer from '../components/Footer';
 
 const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: 1440px;
-	margin: 0 auto;
+	margin: 0 auto 50px;
 
 	@media(min-width: 1024px) {
 		justify-content: space-around;
@@ -27,7 +28,7 @@ const PageBuilder = ({ content }) => {
 	if (!content) return null;
 
 	const hero = content.find(section => section.component === 'Hero');
-	console.log(hero);
+	const footer = content.find(section => section.component === 'Footer');
 	return (
 		<StyledPage>
 			<GlobalStyle />
@@ -53,6 +54,7 @@ const PageBuilder = ({ content }) => {
 					}
 				})}
 			</Wrapper>
+			<Footer {...footer} />
 		</StyledPage>
 	);
 };
