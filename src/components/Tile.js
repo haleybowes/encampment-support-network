@@ -58,7 +58,8 @@ const StyledTile = styled.div`
 		text-align: center;
 		transition: all ease-in-out 0.2s;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: #060b04;
 			color: #f6f6eb;
 		}

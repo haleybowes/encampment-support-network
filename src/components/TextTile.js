@@ -120,7 +120,8 @@ const StyledTile = styled.div`
 			padding: 15px 40px;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			box-shadow: unset;
 			transform: translate(0.3em, 0.2em);
 		}

@@ -62,7 +62,8 @@ const StyledList = styled.ul`
 						5px 5px #f83a11, 6px 6px #f83a11;
 					color: #010754;
 
-					&:hover {
+					&:hover,
+					&:focus {
 						box-shadow: unset;
 						transform: translate(0.3em, 0.2em);
 					}
@@ -98,7 +99,8 @@ const StyledList = styled.ul`
 			display: block;
 			transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
-			&:hover {
+			&:hover,
+			&:focus {
 				transform: translateY(-2px);
 				opacity: 0.8;
 			}

@@ -129,7 +129,8 @@ const SocialLinks = styled.ul`
 		display: block;
 		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			transform: translateY(-2px);
 			opacity: 0.8;
 		}
