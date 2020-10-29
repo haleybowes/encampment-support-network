@@ -23,15 +23,21 @@ const Text = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	order: 1;
-	padding: 50px 20px;
+	background-image: url(${({ backgroundImage }) => backgroundImage});
+	margin-top: 85px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	/* background-color: #f83a11; */
+	/* padding: 50px 20px; */
 
 	@media (min-width: 768px) {
-		padding: 50px 80px;
+		/* padding: 50px 80px; */
 	}
 
 	@media (min-width: 1024px) {
 		width: 50%;
-		padding: 0 20px;
+		/* padding: 0 20px; */
 	}
 
 	@media (min-width: 1024px) {
@@ -46,7 +52,42 @@ const Text = styled.div`
 		line-height: 28px;
 		font-size: 60px;
 		line-height: 55px;
-		position: relative;
+		/* color: #f6f6eb; */
+
+		/* span {
+			display: inline-block;
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 102%;
+				background: #f83a11;
+				left: -1px;
+				right: 0;
+				bottom: 10px;
+				height: 80%;
+				z-index: -1;
+			}
+		} */
+		/* 
+		span {
+			display: inline;
+			position: relative;
+			color: #f6f6eb;
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 102%;
+				background: #f83a11;
+				left: -1px;
+				right: 0;
+				bottom: 0px;
+				height: 90%;
+				z-index: -1;
+			}
+		} */
 
 		@media (min-width: 768px) {
 			font-size: 70px;
@@ -97,8 +138,8 @@ const Asset = styled.div`
 const Hero = ({ logo, header, body, asset, floatingAsset }) => {
 	console.log(logo);
 	return (
-		<StyledHero>
-			<Text>
+		<StyledHero >
+			<Text backgroundImage={logo.file.url}>
 				{/* {logo && (
 					<Logo>
 						<img src={logo.file.url} alt="" />
