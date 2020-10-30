@@ -5,7 +5,7 @@ import Link from '../Link';
 
 const Nav = styled.div`
 	background-color: #c89220;
-	height: 80px;
+	height: 82px;
 	width: 100%;
 	position: fixed;
 	z-index: 201;

@@ -113,9 +113,9 @@ const StyledList = styled.ul`
 	}
 `;
 
-const DesktopNav = ({ content: { logoLink, socialLinks, textLinks } }) => {
+const DesktopNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks } }) => {
 	return (
-		<StyledNav>
+		<StyledNav className={navUnderline}>
 			{textLinks && (
 				<StyledList>
 					{textLinks.map((link) => (

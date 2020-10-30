@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStaticQuery } from 'gatsby';
 
 import DesktopNav from './DesktopNav';
@@ -43,10 +43,27 @@ const Nav = () => {
 		}
 	`);
 
+	const [navUnderline, setNavUnderline] = useState('');
+
+	useEffect(() => {
+		document.addEventListener('scroll', () => {
+			const scrolled = document.scrollingElement.scrollTop;
+			if (scrolled >= 120) {
+				setNavUnderline('underline');
+			} else {
+				setNavUnderline('');
+			}
+		});
+
+		return () => {
+			document.removeEventListener('scroll');
+		};
+	}, []);
+
 	return (
 		<>
-			<DesktopNav content={contentfulNav} />
-			<MobileNav content={contentfulNav} />
+			<DesktopNav navUnderline={navUnderline} content={contentfulNav} />
+			<MobileNav navUnderline={navUnderline} content={contentfulNav} />
 		</>
 	);
 };

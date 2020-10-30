@@ -53,7 +53,9 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	&.underline {
-		border-bottom: 1px solid green;
+		-webkit-box-shadow: 0px 4px 0px 0px rgba(1,7,84,1);
+		-moz-box-shadow: 0px 4px 0px 0px rgba(1,7,84,1);
+		box-shadow: 0px 4px 0px 0px rgba(1,7,84,1);
 	}
 
 	a {
