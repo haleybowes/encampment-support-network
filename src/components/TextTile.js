@@ -19,7 +19,7 @@ const StyledTile = styled.div`
 	color: #202020;
 	justify-content: space-between;
 
-	@media (max-width: 475px) {
+	@media (max-width: 768px) {
 		width: 100%;
 
 		div {

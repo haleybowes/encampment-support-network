@@ -18,6 +18,10 @@ const Nav = styled.div`
 		display: none;
 	}
 
+	.underline {
+		box-shadow: 0px 10px 0px 0px rgba(1, 7, 84, 1);
+	}
+
 	.hamburger-menu,
 	.hamburger-menu:after,
 	.hamburger-menu:before {
@@ -163,21 +167,32 @@ const StyledList = styled.ul`
 
 const MobileNav = ({ content: { logoLink, socialLinks, textLinks } }) => {
 	const [open, setOpened] = useState(false);
+	const [navUnderline, setNavUnderline] = useState('');
 
 	useEffect(() => {
 		document.addEventListener('keydown', handleKeyDown);
+		document.addEventListener('scroll', () => {
+			const scrolled = document.scrollingElement.scrollTop;
+			if (scrolled >= 120) {
+				setNavUnderline('underline');
+			} else {
+				setNavUnderline('');
+			}
+		});
 
 		return () => {
 			document.removeEventListener('keydown', handleKeyDown);
+			document.removeEventListener('scroll');
 		};
 	}, []);
 
 	const handleKeyDown = (e) => {
-		const focusableElements = document.querySelectorAll('.burger-menu, .mobile-nav a, .fixed-menu a');
+		const focusableElements = document.querySelectorAll(
+			'.burger-menu, .mobile-nav a, .fixed-menu a'
+		);
 		const firstFocusableElement = focusableElements[0];
 		const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
-		console.log(focusableElements);
 		if (e.code === 'Escape') {
 			const burgerMenu = document.querySelector('.burger-menu');
 			console.log(burgerMenu, 'getting here');
@@ -199,7 +214,7 @@ const MobileNav = ({ content: { logoLink, socialLinks, textLinks } }) => {
 
 	return (
 		<>
-			<Nav className="mobile-nav">
+			<Nav className={`mobile-nav ${navUnderline}`}>
 				<Burger className="burger-menu" onClick={() => setOpened(!open)}>
 					<div className={`hamburger-menu ${open ? 'animate' : ''}`} />
 				</Burger>
