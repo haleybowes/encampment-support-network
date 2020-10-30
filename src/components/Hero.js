@@ -3,40 +3,23 @@ import styled from 'styled-components';
 
 import RichText from '../components/RichText';
 
-const Logo = styled.div`
-	text-align: center;
-	margin-bottom: 10px;
-
-	img {
-		max-width: 100%;
-		width: 300px;
-
-		@media (min-width: 1440px) {
-			width: 350px;
-		}
-	}
-`;
-
 const Text = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	order: 1;
-	background-image: url(${({ backgroundImage }) => backgroundImage});
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	/* background-color: #f83a11; */
-	/* padding: 50px 20px; */
 
 	@media (max-width: 767px) {
 		padding: 50px 20px;
 	}
 
+	@media (min-width: 768px) {
+		background-color: #f83a11;
+	}
+
 	@media (min-width: 1024px) {
 		width: 50%;
-		margin-top: 85px;
 	}
 
 	h1 {
@@ -55,13 +38,12 @@ const Text = styled.div`
 		}
 
 		@media (min-width: 1024px) {
-			font-size: 72px;
-			line-height: 67px;
+			font-size: 65px;
+			line-height: 55px;
 		}
 	}
 
 	p {
-
 		&:empty {
 			display: none;
 		}
@@ -83,20 +65,21 @@ const Text = styled.div`
 const StyledHero = styled.section`
 	display: flex;
 	flex-direction: column;
+	margin-top: 85px;
 
 	@media (min-width: 1024px) {
 		min-height: 650px;
 		flex-direction: row;
+		margin: 91px 20px 0;
+		border-radius: 6px;
+		overflow: hidden;
 	}
 `;
 
 const Asset = styled.div`
 	background-image: url(${({ backgroundImage }) => backgroundImage});
-	border-radius: 6px;
 	background-size: cover;
 	background-position: center;
-	margin: 5px;
-	margin-top: 85px;
 
 	@media (max-width: 1023px) {
 		height: 525px;
@@ -116,29 +99,27 @@ const FloatingAsset = styled.div`
 		display: none;
 	}
 
+	&:nth-of-type(2) {
+		text-align: right;
+	}
+
 	img {
 		max-width: 100%;
+		max-width: 300px;
 		padding: 10px;
 	}
 `;
 
 const Hero = ({ logo, header, body, asset, floatingAsset }) => {
-	console.log(logo);
 	return (
 		<StyledHero>
 			<Text>
-				{/* {logo && (
-					<Logo>
-						<img src={logo.file.url} alt="" />
-					</Logo>
-				)} */}
 				{floatingAsset && (
 					<FloatingAsset>
 						<img src={logo.file.url} alt="" />
 					</FloatingAsset>
 				)}
 				{header && <RichText document={header.json} />}
-				{/* <Button>Learn more</Button> */}
 				{body && <RichText document={body.json} />}
 				{floatingAsset && (
 					<FloatingAsset>

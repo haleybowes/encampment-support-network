@@ -18,10 +18,6 @@ const Nav = styled.div`
 		display: none;
 	}
 
-	.underline {
-		box-shadow: 0px 10px 0px 0px rgba(1, 7, 84, 1);
-	}
-
 	.hamburger-menu,
 	.hamburger-menu:after,
 	.hamburger-menu:before {

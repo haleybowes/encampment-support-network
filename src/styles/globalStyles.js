@@ -52,6 +52,10 @@ const GlobalStyle = createGlobalStyle`
 		font-weight: 500;
 	}
 
+	&.underline {
+		border-bottom: 1px solid green;
+	}
+
 	a {
 		font-family: gopher, sans-serif;
 		text-transform: uppercase;
