@@ -20,6 +20,7 @@ const Nav = () => {
 						}
 					}
 					linkUrl
+					altText
 				}
 				socialLinks {
 					id
@@ -29,6 +30,7 @@ const Nav = () => {
 						}
 					}
 					linkUrl
+					altText
 				}
 				logoLink {
 					id
@@ -38,6 +40,7 @@ const Nav = () => {
 						}
 					}
 					linkUrl
+					altText
 				}
 			}
 		}

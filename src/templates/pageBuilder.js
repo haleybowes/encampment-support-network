@@ -11,6 +11,7 @@ import ListTile from '../components/ListTile';
 import SplitTile from '../components/SplitTile';
 import Footer from '../components/Footer';
 import ContactUs from '../components/ContactUs';
+import SEO from '../components/Seo';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -31,6 +32,7 @@ const PageBuilder = ({ content }) => {
 	const hero = content.find((section) => section.component === 'Hero');
 	return (
 		<StyledPage>
+			<SEO />
 			<GlobalStyle />
 			<Nav />
 			{hero && <Hero {...hero} />}

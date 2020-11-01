@@ -179,7 +179,6 @@ const MobileNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks }
 
 		if (e.code === 'Escape') {
 			const burgerMenu = document.querySelector('.burger-menu');
-			console.log(burgerMenu, 'getting here');
 			setOpened(false);
 			e.stopPropagation();
 			burgerMenu.focus();
@@ -199,7 +198,7 @@ const MobileNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks }
 	return (
 		<>
 			<Nav className={`mobile-nav ${navUnderline}`}>
-				<Burger className="burger-menu" onClick={() => setOpened(!open)}>
+				<Burger aria-label={open ? 'Collapse mobile menu.' : 'Expand mobile menu.'} className="burger-menu" onClick={() => setOpened(!open)}>
 					<div className={`hamburger-menu ${open ? 'animate' : ''}`} />
 				</Burger>
 				{logoLink && (

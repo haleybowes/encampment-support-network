@@ -107,7 +107,6 @@ const ImageWrapper = styled.div`
 `;
 
 const IntroTile = ({ asset, body, floatingAsset, header }) => {
-	console.log(header);
 	return (
 		<Tile>
 			{floatingAsset && (

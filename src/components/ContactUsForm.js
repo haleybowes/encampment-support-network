@@ -83,7 +83,7 @@ const ContactUsForm = () => {
 				<p>Message</p>
 				<input type="text" name="message" id="message" />
 			</StyledLabel>
-			{formStatus === 'SUCCESS' ? <p>Thank you for your submission! We will be in touch shortly.</p> : <button>Submit</button>}
+			{formStatus === 'SUCCESS' ? <p>Thank you for your submission! We will be in touch shortly.</p> : <button aria-label="Submit Contact Us form.">Submit</button>}
 			{formStatus === 'ERROR' && <p>Ooops! Something went wrong. Please refresh your page and try again.</p>}
 		</StyledForm>
 	);

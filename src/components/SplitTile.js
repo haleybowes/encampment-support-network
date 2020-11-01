@@ -22,8 +22,9 @@ const TextWrapper = styled.div`
 		line-height: 26px;
 	}
 
-	h3 {
-		font-weight: 100;
+	p span {
+		font-family: gopher, sans-serif;
+		font-weight: 500;
 		display: inline;
 		color: #f6f6eb;
 		background-color: #F83A11;
@@ -40,18 +41,9 @@ const ImageWrapper = styled.div`
 `;
 
 const SplitTile = ({
-	backgroundColour,
-	component,
 	body,
-	header,
-	primaryLink,
-	secondaryLink,
 	asset,
-	logo,
-	floatingAsset,
-	secondaryAsset,
 }) => {
-	console.log('helo?');
 	return (
 		<Tile>
 			<TextWrapper>{body && <RichText document={body.json} />}</TextWrapper>

@@ -4,7 +4,7 @@ import { BLOCKS } from '@contentful/rich-text-types';
 
 import RichText from '../components/RichText';
 
-const Link = ({ link: { linkUrl, linkText, image } }) => {
+const Link = ({ link: { linkUrl, linkText, image, altText } }) => {
 	const isInternal = /^\/(?!\/)/.test(linkUrl);
 	const options = {
 		renderNode: {
@@ -20,11 +20,11 @@ const Link = ({ link: { linkUrl, linkText, image } }) => {
 	);
 
 	if (isInternal) {
-		return <GatsbyLink to={linkUrl}>{children}</GatsbyLink>;
+		return <GatsbyLink alt-text={altText || ""} to={linkUrl}>{children}</GatsbyLink>;
 	}
 
 	return (
-		<a href={linkUrl} rel="noreferrer" target="_blank">
+		<a alt-text={altText || ""} href={linkUrl} rel="noreferrer" target="_blank">
 			{children}
 		</a>
 	);

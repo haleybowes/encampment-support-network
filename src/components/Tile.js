@@ -136,14 +136,15 @@ const TextWrapper = styled.div`
 		margin: 30px auto 0;
 	}
 
-	h3 {
-		font-weight: 100;
+	p span {
 		display: inline;
 		background-color: #f6f6eb;
 		font-size: 18px;
 		line-height: 24px;
 		color: #f6f6eb;
 		background-color: #f83a11;
+		font-family: gopher, sans-serif;
+		font-weight: 500;
 	}
 
 	@media (min-width: 768px) {
