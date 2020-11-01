@@ -1,12 +1,28 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
-const ContactUs = () => {
-	return (
-		<section>
-			<h1>Here is the contact us page.</h1>
-			<button>Click me</button>
-		</section>
-	)
-};
+import PageBuilder from '../templates/pageBuilder';
+
+const ContactUs = ({ data }) => <PageBuilder content={data.contentfulPage.content} />;
+
+export const query = graphql`
+	query ContactUsQuery {
+		contentfulPage(internalName: { eq: "Contact Us" }) {
+			id
+			content {
+				... on ContentfulTile {
+					id
+					component
+					body {
+						json
+					}
+					header {
+						json
+					}
+				}
+			}
+		}
+	}
+`;
 
 export default ContactUs;

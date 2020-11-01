@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	p {
+	p, input {
 		font-size: 1rem;
 
 		@media (min-width: 1024px) {
@@ -47,18 +47,18 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	h1, h2, h3 {
+	h1, h2, h3, label p {
 		font-family: gopher, sans-serif;
 		font-weight: 500;
 	}
 
 	&.underline {
-		-webkit-box-shadow: 0px 4px 0px 0px rgba(1,7,84,1);
-		-moz-box-shadow: 0px 4px 0px 0px rgba(1,7,84,1);
-		box-shadow: 0px 4px 0px 0px rgba(1,7,84,1);
+		-webkit-box-shadow: 0px 2px 0px 0px rgba(1,7,84,1);
+		-moz-box-shadow: 0px 2px 0px 0px rgba(1,7,84,1);
+		box-shadow: 0px 2px 0px 0px rgba(1,7,84,1);
 	}
 
-	a {
+	a, button {
 		font-family: gopher, sans-serif;
 		text-transform: uppercase;
 		text-decoration: none;
@@ -73,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	p {
+	p, input {
 		font-family: proxima-nova, sans-serif;
 	}
 `;

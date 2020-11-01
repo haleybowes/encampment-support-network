@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import RichText from '../components/RichText';
+import { useStaticQuery } from 'gatsby';
 
 const StyledFooter = styled.footer`
     border-top: 2px solid #010754;
@@ -17,8 +18,19 @@ const StyledFooter = styled.footer`
 	}
 `;
 
-const Footer = ({ body }) => {
-	return <StyledFooter>{body && <RichText document={body.json} />}</StyledFooter>;
+const Footer = () => {
+	const { contentfulFooter: { copyright } } = useStaticQuery(graphql`
+		query FooterQuery {
+			contentfulFooter {
+                id
+                copyright {
+                    json
+                }
+			}
+		}
+    `);
+    
+    return <StyledFooter>{copyright && <RichText document={copyright.json} />}</StyledFooter>
 };
 
 export default Footer;

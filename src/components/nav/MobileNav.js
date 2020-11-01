@@ -5,7 +5,7 @@ import Link from '../Link';
 
 const Nav = styled.div`
 	background-color: #c89220;
-	height: 82px;
+	height: 83px;
 	width: 100%;
 	position: fixed;
 	z-index: 201;
@@ -161,24 +161,14 @@ const StyledList = styled.ul`
 	}
 `;
 
-const MobileNav = ({ content: { logoLink, socialLinks, textLinks } }) => {
+const MobileNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks } }) => {
 	const [open, setOpened] = useState(false);
-	const [navUnderline, setNavUnderline] = useState('');
 
 	useEffect(() => {
 		document.addEventListener('keydown', handleKeyDown);
-		document.addEventListener('scroll', () => {
-			const scrolled = document.scrollingElement.scrollTop;
-			if (scrolled >= 120) {
-				setNavUnderline('underline');
-			} else {
-				setNavUnderline('');
-			}
-		});
 
 		return () => {
 			document.removeEventListener('keydown', handleKeyDown);
-			document.removeEventListener('scroll');
 		};
 	}, []);
 

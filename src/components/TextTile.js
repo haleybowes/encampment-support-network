@@ -42,8 +42,6 @@ const StyledTile = styled.div`
 		}
 	}
 
-	background-color: #c89220;
-	background-color: #cc7e1c;
 	background-color: #bd7001;
 	margin: 0 15px 20px 10px;
 	border-radius: 6px;
@@ -132,6 +130,7 @@ const ImageWrapper = styled.div`
 	width: 100%;
 	height: 100%;
 	text-align: center;
+	object-fit: contain;
 
 	img {
 		width: 100%;
@@ -170,7 +169,7 @@ const LinkWrapper = styled.div`
 		display: inline-block;
 		margin-top: 30px;
 
-		@media (min-width: 376px) and (max-width: 425px) {
+		@media (min-width: 376px) and (max-width: 767px) {
 			margin-left: 10px;
 		}
 

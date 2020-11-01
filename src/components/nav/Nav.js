@@ -44,19 +44,20 @@ const Nav = () => {
 	`);
 
 	const [navUnderline, setNavUnderline] = useState('');
+	const handleUnderline = () => {
+		const scrolled = document.scrollingElement.scrollTop;
+		if (scrolled >= 120) {
+			setNavUnderline('underline');
+		} else {
+			setNavUnderline('');
+		}
+	};
 
 	useEffect(() => {
-		document.addEventListener('scroll', () => {
-			const scrolled = document.scrollingElement.scrollTop;
-			if (scrolled >= 120) {
-				setNavUnderline('underline');
-			} else {
-				setNavUnderline('');
-			}
-		});
+		document.addEventListener('scroll', handleUnderline);
 
 		return () => {
-			document.removeEventListener('scroll');
+			document.removeEventListener('scroll', handleUnderline);
 		};
 	}, []);
 

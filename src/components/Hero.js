@@ -53,12 +53,6 @@ const Text = styled.div`
 			width: 70%;
 			margin: 0 auto;
 		}
-
-		@media (min-width: 1024px) {
-			padding: 0 50px 50px;
-			font-size: 20px;
-			width: auto;
-		}
 	}
 `;
 
@@ -127,7 +121,7 @@ const Hero = ({ logo, header, body, asset, floatingAsset }) => {
 					</FloatingAsset>
 				)}
 			</Text>
-			<Asset backgroundImage={asset.file.url} />
+			{asset && <Asset backgroundImage={asset.file.url} />}
 		</StyledHero>
 	);
 };
