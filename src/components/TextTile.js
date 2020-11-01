@@ -128,7 +128,7 @@ const StyledTile = styled.div`
 
 const ImageWrapper = styled.div`
 	width: 100%;
-	height: 100%;
+	height: auto;
 	text-align: center;
 	object-fit: contain;
 

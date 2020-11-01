@@ -27,7 +27,6 @@ const Nav = styled.div`
 
 	.hamburger-menu {
 		position: relative;
-		transform: translateY(25px);
 		background: #010754;
 		transition: all 0ms 200ms;
 		border-radius: 6px;
@@ -75,12 +74,11 @@ const Nav = styled.div`
 `;
 
 const Burger = styled.button`
-	width: 65px;
-	height: 70px;
-	display: flex;
 	z-index: 202;
 	background: transparent;
 	border: none;
+	display: flex;
+	align-items: center;
 
 	&:hover {
 		cursor: pointer;

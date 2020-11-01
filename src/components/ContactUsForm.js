@@ -37,6 +37,7 @@ const StyledForm = styled.form`
 			6px 6px #f83a11;
 		color: #010754;
         background-color: #c89220;
+        font-size: 18px;
 
 		&:hover,
 		&:focus {
