@@ -60,6 +60,7 @@ const StyledHero = styled.section`
 	display: flex;
 	flex-direction: column;
 	margin-top: 85px;
+	max-width: 1800px;
 
 	@media (min-width: 1024px) {
 		min-height: 650px;
@@ -67,6 +68,10 @@ const StyledHero = styled.section`
 		margin: 91px 20px 0;
 		border-radius: 6px;
 		overflow: hidden;
+	}
+
+	@media (min-width: 1840px) {
+		margin: 91px auto 0;
 	}
 `;
 

@@ -12,9 +12,6 @@ const StyledNav = styled.nav`
 	justify-content: space-between;
 	width: 100%;
 	align-items: center;
-	background-color: white;
-	background-color: #b35a00;
-	background-color: #e3ce60;
 	background-color: #c89220;
 	min-height: 85px;
 	z-index: 1;
@@ -38,7 +35,7 @@ const Logo = styled.div`
 	justify-content: center;
 
 	img {
-		max-width: 85px;
+		max-width: 120px;
 	}
 `;
 
