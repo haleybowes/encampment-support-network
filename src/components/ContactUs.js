@@ -22,6 +22,7 @@ const StyledContactUsPage = styled.section`
 
     p {
         margin-bottom: 10px;
+        font-size: 18px;
 
         a {
             background-color: #f83a11;

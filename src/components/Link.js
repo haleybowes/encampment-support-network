@@ -20,11 +20,11 @@ const Link = ({ link: { linkUrl, linkText, image, altText } }) => {
 	);
 
 	if (isInternal) {
-		return <GatsbyLink alt-text={altText || ""} to={linkUrl}>{children}</GatsbyLink>;
+		return <GatsbyLink aria-label={altText || ""} to={linkUrl}>{children}</GatsbyLink>;
 	}
 
 	return (
-		<a alt-text={altText || ""} href={linkUrl} rel="noreferrer" target="_blank">
+		<a aria-label={altText || ""} href={linkUrl} rel="noreferrer" target="_blank">
 			{children}
 		</a>
 	);
