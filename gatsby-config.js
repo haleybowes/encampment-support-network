@@ -36,6 +36,7 @@ module.exports = {
 				short_name: `ESN Toronto`,
 				start_url: `/`,
 				icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+				siteUrl: process.env.NODE_ENV === 'development' ? process.env.BASE_URL : 'https://encampmentsupportnetwork.netlify.app/',
 			},
 		},
 		`gatsby-plugin-robots-txt`,
