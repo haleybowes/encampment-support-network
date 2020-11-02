@@ -29,16 +29,5 @@ module.exports = {
 				},
 			},
 		},
-		{
-			resolve: `gatsby-plugin-manifest`,
-			options: {
-				name: `The Encampment Support Network`,
-				short_name: `ESN Toronto`,
-				start_url: `/`,
-				icon: `src/images/favicon.png`, // This path is relative to the root of the site.
-				siteUrl: 'https://encampmentsupportnetwork.netlify.app/',
-			},
-		},
-		`gatsby-plugin-robots-txt`,
 	],
 };
