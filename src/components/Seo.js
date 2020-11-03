@@ -14,7 +14,7 @@ const SEO = () => {
 			link={[
 				{
 					rel: 'canonical',
-					href: 'https://encampmentsupportnetwork.netlify.app/',
+					href: 'https://www.encampmentsupportnetwork.com/',
 				},
 			]}
 			meta={[
@@ -38,7 +38,6 @@ const SEO = () => {
 					name: `twitter:card`,
 					content: `summary`,
 				},
-				{ name: 'robots', content: 'noindex' },
 			]}
 		/>
 	);
