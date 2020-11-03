@@ -29,7 +29,7 @@ const TextWrapper = styled.div`
 		color: #f6f6eb;
 		background-color: #F83A11;
 		font-size: 18px;
-		line-height: 24px;
+		line-height: 25px;
 	}
 `;
 const ImageWrapper = styled.div`

@@ -44,24 +44,6 @@ const Body = styled.div`
 		margin-bottom: 15px;
 	}
 
-	p span {
-		display: inline-block;
-		position: relative;
-		color: #f6f6eb;
-
-		&::after {
-			content: '';
-			position: absolute;
-			width: 102%;
-			background: #f83a11;
-			left: -1px;
-			right: 0;
-			bottom: 0px;
-			height: 105%;
-			z-index: -1;
-		}
-	}
-
 	@media (min-width: 768px) {
 		width: 50%;
 	}
