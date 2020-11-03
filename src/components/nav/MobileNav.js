@@ -93,6 +93,10 @@ const FixedMenu = styled.div`
 	z-index: 100;
 	transform: translateY(${({ open }) => (open ? '0' : '-100%')});
 	transition: transform 200ms ease-out;
+	padding-bottom: 85px;
+	-webkit-box-shadow: 0px -10px 0px 0px rgba(200, 146, 32, 1);
+	-moz-box-shadow: 0px -10px 0px 0px rgba(200, 146, 32, 1);
+	box-shadow: 0px -10px 0px 0px rgba(200, 146, 32, 1);
 
 	a {
 		color: #010754;
@@ -197,8 +201,12 @@ const MobileNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks }
 
 	return (
 		<>
-			<Nav className={`mobile-nav ${navUnderline}`}>
-				<Burger aria-label={open ? 'Collapse mobile menu.' : 'Expand mobile menu.'} className="burger-menu" onClick={() => setOpened(!open)}>
+			<Nav className={`mobile-nav ${!open && navUnderline}`}>
+				<Burger
+					aria-label={open ? 'Collapse mobile menu.' : 'Expand mobile menu.'}
+					className="burger-menu"
+					onClick={() => setOpened(!open)}
+				>
 					<div className={`hamburger-menu ${open ? 'animate' : ''}`} />
 				</Burger>
 				{logoLink && (
