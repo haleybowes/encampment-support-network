@@ -6,7 +6,7 @@ const StyledLabel = styled.label`
 		margin-top: 2rem;
 	}
 
-	input {
+	input, textarea {
 		background-color: #c89220;
 		color: #010754;
 		border: 1px solid #010754;
@@ -15,10 +15,9 @@ const StyledLabel = styled.label`
 		width: 100%;
 	}
 
-	&:last-of-type {
-		input {
-			height: 200px;
-		}
+	textarea {
+		height: 200px;
+		font-size: 1rem;
 	}
 `;
 
@@ -88,7 +87,7 @@ const ContactUsForm = () => {
 			</StyledLabel>
 			<StyledLabel htmlFor="message">
 				<p>Message</p>
-				<input type="textarea" name="message" id="message" />
+				<textarea name="message" id="message" />
 			</StyledLabel>
 			{formStatus === 'SUCCESS' ? <p>Thank you for your submission! We will be in touch shortly.</p> : <button aria-label="Submit Contact Us form.">Submit</button>}
 			{formStatus === 'ERROR' && <p>Ooops! Something went wrong. Please refresh your page and try again.</p>}

@@ -29,7 +29,8 @@ const StyledContactUsPage = styled.section`
             color: #F6F6EB;
             transition: all ease 0.2s;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 color: #010754;
             }
         }

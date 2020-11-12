@@ -73,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	p, input {
+	p, input, textarea {
 		font-family: proxima-nova, sans-serif;
 	}
 `;
