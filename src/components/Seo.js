@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 const SEO = () => {
 	const title = 'ESN Toronto';
 	const metaDescription =
-		'The Encampment Support Network is creating community, support and advocacy for our neighbours in encampments';
+		'The Encampment Support Network is creating community, support and advocacy for our neighbours in encampments.';
 	return (
 		<Helmet
 			htmlAttributes={{

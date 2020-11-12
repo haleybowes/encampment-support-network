@@ -24,7 +24,7 @@ const Link = ({ link: { linkUrl, linkText, image, altText } }) => {
 	}
 
 	return (
-		<a aria-label={altText || ""} href={linkUrl} rel="noreferrer" target="_blank">
+		<a aria-label={altText || ""} href={linkUrl} rel="noopener noreferrer" target="_blank">
 			{children}
 		</a>
 	);

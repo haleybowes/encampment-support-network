@@ -10,7 +10,14 @@ require('dotenv').config({
 
 module.exports = {
 	/* Your site config here */
+	siteMetadata: {
+		title: `ESN Toronto`,
+		description: `The Encampment Support Network is creating community, support and advocacy for our neighbours in encampments`,
+		author: `@haleybowes`,
+		siteUrl: `https://www.encampmentsupportnetwork.com/`,
+	},
 	plugins: [
+		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-plugin-styled-components`,
 		},
