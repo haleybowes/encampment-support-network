@@ -113,6 +113,7 @@ const StyledTile = styled.div`
 		box-shadow: 1px 1px #f83a11, 2px 2px #f83a11, 3px 3px #f83a11, 4px 4px #f83a11, 5px 5px #f83a11,
 			6px 6px #f83a11;
 		color: #010754;
+		font-weight: 500;
 
 		@media (min-width: 1024px) {
 			padding: 15px 40px;
