@@ -18,7 +18,7 @@ const StyledNav = styled.nav`
 	margin: 0;
 	padding: 10px 20px;
 
-	@media (max-width: 768px) {
+	@media (max-width: 940px) {
 		display: none;
 	}
 
@@ -49,6 +49,7 @@ const StyledList = styled.ul`
 			&:first-of-type {
 				a {
 					color: #060b04;
+					margin-right: 20px;
 					letter-spacing: 0.5px;
 					border-radius: 5px;
 					padding: 15px 30px;
@@ -67,8 +68,10 @@ const StyledList = styled.ul`
 				}
 			}
 
-			&:nth-of-type(2) {
+			&:nth-of-type(2),
+			&:nth-of-type(3) {
 				a {
+					padding: 15px;
 					span {
 						transition: color 200ms ease-out, background 200ms ease-out;
 
@@ -91,7 +94,8 @@ const StyledList = styled.ul`
 		}
 	}
 
-	&:nth-of-type(2) {
+	&:nth-of-type(2),
+	&:nth-of-type(3) {
 		a {
 			display: block;
 			transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;

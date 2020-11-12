@@ -12,6 +12,7 @@ import SplitTile from '../components/SplitTile';
 import Footer from '../components/Footer';
 import ContactUs from '../components/ContactUs';
 import SEO from '../components/Seo';
+import ContactUsForm from '../components/ContactUsForm';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -28,7 +29,6 @@ const Wrapper = styled.div`
 const StyledPage = styled.div``;
 const PageBuilder = ({ content }) => {
 	if (!content) return null;
-
 	const hero = content.find((section) => section.component === 'Hero');
 	return (
 		<StyledPage>
@@ -53,6 +53,8 @@ const PageBuilder = ({ content }) => {
 							return <TextTile key={child.id} {...child} />;
 						case 'ContactUs':
 							return <ContactUs key={child.id} {...child} />;
+						case 'ContactUsForm':
+							return <ContactUsForm key={child.id} />;
 						default:
 							return null;
 					}

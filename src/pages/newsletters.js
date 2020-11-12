@@ -3,11 +3,11 @@ import { graphql } from 'gatsby';
 
 import PageBuilder from '../templates/pageBuilder';
 
-const ContactUs = ({ data }) => <PageBuilder content={data.contentfulPage.content} />;
+const NewsletterPage = ({ data }) => <PageBuilder content={data.contentfulPage.content} />;
 
 export const query = graphql`
-	query ContactUsQuery {
-		contentfulPage(internalName: { eq: "Contact Us" }) {
+	query NewsletterPageQuery {
+		contentfulPage(internalName: { eq: "Newsletter Page" }) {
 			id
 			content {
 				... on ContentfulTile {
@@ -18,8 +18,8 @@ export const query = graphql`
 					}
 					header {
 						json
-					}
-					primaryLink {
+                    }
+                    primaryLink {
 						component
 						altText
 						linkUrl
@@ -28,13 +28,9 @@ export const query = graphql`
 						}
 					}
 				}
-				... on ContentfulForm {
-					id
-					component
-				}
 			}
 		}
 	}
 `;
 
-export default ContactUs;
+export default NewsletterPage;

@@ -14,7 +14,7 @@ const Nav = styled.div`
 	display: flex;
 	justify-content: space-between;
 
-	@media (min-width: 769px) {
+	@media (min-width: 941px) {
 		display: none;
 	}
 

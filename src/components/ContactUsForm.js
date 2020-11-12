@@ -23,7 +23,14 @@ const StyledLabel = styled.label`
 `;
 
 const StyledForm = styled.form`
-	margin-top: 2rem;
+	width: 100%;
+    padding: 0 20px;
+
+	@media(min-width: 768px) {
+		width: 80%;
+		padding: 0;
+		margin: 0 auto;
+	}
 
     button {
         margin: 2rem auto;
