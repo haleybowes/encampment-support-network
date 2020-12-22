@@ -53,8 +53,8 @@ const PageBuilder = ({ content }) => {
 							return <TextTile key={child.id} {...child} />;
 						case 'ContactUs':
 							return <ContactUs key={child.id} {...child} />;
-						case 'ContactUsForm':
-							return <ContactUsForm key={child.id} />;
+						// case 'ContactUsForm':
+						// 	return <ContactUsForm key={child.id} />;
 						default:
 							return null;
 					}
