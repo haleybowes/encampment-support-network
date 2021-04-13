@@ -59,19 +59,24 @@ const Text = styled.div`
 const StyledHero = styled.section`
 	display: flex;
 	flex-direction: column;
-	margin-top: 85px;
 	max-width: 1800px;
+	padding-top: 435px;
+	
+	@media (min-width: 768px) {
+		padding-top: 340px;
+	}
 
 	@media (min-width: 1024px) {
 		min-height: 650px;
 		flex-direction: row;
-		margin: 91px 20px 0;
+		margin: 350px 20px 0;
 		border-radius: 6px;
 		overflow: hidden;
+		padding-top: 0;
 	}
 
 	@media (min-width: 1840px) {
-		margin: 91px auto 0;
+		margin: 350px auto 0;
 	}
 `;
 

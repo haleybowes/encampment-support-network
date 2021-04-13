@@ -1,9 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import PageBuilder from '../templates/pageBuilder';
 
-const ContactUs = ({ data }) => <PageBuilder content={data.contentfulPage.content} />;
+export const StyledWrapper = styled.div`
+	margin: 303px 0;
+`;
+
+const ContactUs = ({ data }) => <StyledWrapper><PageBuilder content={data.contentfulPage.content} /></StyledWrapper>;
 
 export const query = graphql`
 	query ContactUsQuery {

@@ -115,6 +115,8 @@ const FixedMenu = styled.div`
 `;
 
 const Logo = styled.div`
+	margin-left: 108px;
+
 	img {
 		max-width: 90px;
 	}
@@ -138,7 +140,7 @@ const SocialLinks = styled.ul`
 		}
 	}
 
-	li:last-of-type {
+	li {
 		margin-left: 10px;
 	}
 

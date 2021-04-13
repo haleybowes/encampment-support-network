@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import PageBuilder from '../templates/pageBuilder';
+import { StyledWrapper } from '../pages/contact-us.js'
 
-const NewsletterPage = ({ data }) => <PageBuilder content={data.contentfulPage.content} />;
+const NewsletterPage = ({ data }) => <StyledWrapper><PageBuilder content={data.contentfulPage.content} /></StyledWrapper>;
 
 export const query = graphql`
 	query NewsletterPageQuery {

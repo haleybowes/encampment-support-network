@@ -12,7 +12,8 @@ import SplitTile from '../components/SplitTile';
 import Footer from '../components/Footer';
 import ContactUs from '../components/ContactUs';
 import SEO from '../components/Seo';
-import ContactUsForm from '../components/ContactUsForm';
+import Toast from '../components/Toast.js';
+// import ContactUsForm from '../components/ContactUsForm';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -26,7 +27,9 @@ const Wrapper = styled.div`
 	}
 `;
 
-const StyledPage = styled.div``;
+const StyledPage = styled.div`
+`;
+
 const PageBuilder = ({ content }) => {
 	if (!content) return null;
 	const hero = content.find((section) => section.component === 'Hero');
@@ -35,6 +38,7 @@ const PageBuilder = ({ content }) => {
 			<SEO />
 			<GlobalStyle />
 			<Nav />
+			<Toast />
 			{hero && <Hero {...hero} />}
 			<Wrapper>
 				{content.map((child) => {
