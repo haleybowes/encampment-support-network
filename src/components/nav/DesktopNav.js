@@ -71,7 +71,7 @@ const StyledList = styled.ul`
 			&:nth-of-type(2),
 			&:nth-of-type(3) {
 				a {
-					padding: 15px;
+					padding: 15px 10px;
 					span {
 						transition: color 200ms ease-out, background 200ms ease-out;
 

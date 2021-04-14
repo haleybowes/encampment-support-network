@@ -60,23 +60,17 @@ const StyledHero = styled.section`
 	display: flex;
 	flex-direction: column;
 	max-width: 1800px;
-	padding-top: 435px;
-	
-	@media (min-width: 768px) {
-		padding-top: 340px;
-	}
 
 	@media (min-width: 1024px) {
 		min-height: 650px;
 		flex-direction: row;
-		margin: 350px 20px 0;
+		margin: 20px 20px 0;
 		border-radius: 6px;
 		overflow: hidden;
-		padding-top: 0;
 	}
 
 	@media (min-width: 1840px) {
-		margin: 350px auto 0;
+		margin: 0 auto 0;
 	}
 `;
 
@@ -116,23 +110,25 @@ const FloatingAsset = styled.div`
 
 const Hero = ({ logo, header, body, asset, floatingAsset }) => {
 	return (
-		<StyledHero>
-			<Text>
-				{floatingAsset && (
-					<FloatingAsset>
-						<img src={logo.file.url} alt="" />
-					</FloatingAsset>
-				)}
-				{header && <RichText document={header.json} />}
-				{body && <RichText document={body.json} />}
-				{floatingAsset && (
-					<FloatingAsset>
-						<img src={floatingAsset.file.url} alt="" />
-					</FloatingAsset>
-				)}
-			</Text>
-			{asset && <Asset backgroundImage={asset.file.url} />}
-		</StyledHero>
+		<>
+			<StyledHero>
+				<Text>
+					{floatingAsset && (
+						<FloatingAsset>
+							<img src={logo.file.url} alt="" />
+						</FloatingAsset>
+					)}
+					{header && <RichText document={header.json} />}
+					{body && <RichText document={body.json} />}
+					{floatingAsset && (
+						<FloatingAsset>
+							<img src={floatingAsset.file.url} alt="" />
+						</FloatingAsset>
+					)}
+				</Text>
+				{asset && <Asset backgroundImage={asset.file.url} />}
+			</StyledHero>
+		</>
 	);
 };
 

@@ -5,10 +5,10 @@ import RichText from '../components/RichText';
 import Link from '../components/Link';
 
 const StyledContactUsPage = styled.section`
-    margin: 90px 20px 0;
+    margin: 50px 20px 0;
     
     @media (min-width: 768px) {
-        margin: 90px auto 0;
+        margin: 60px auto 0;
         width: 80%;
     }
 

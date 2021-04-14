@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0;
 	}
 
+	html, body, #___gatsby, #gatsby-focus-wrapper {
+		height: 100%;
+	}
+
 	::before,
 	::after {
 	box-sizing: inherit;

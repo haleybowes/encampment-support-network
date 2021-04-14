@@ -27,8 +27,7 @@ const Wrapper = styled.div`
 	}
 `;
 
-const StyledPage = styled.div`
-`;
+const StyledPage = styled.div``;
 
 const PageBuilder = ({ content }) => {
 	if (!content) return null;

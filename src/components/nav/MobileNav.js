@@ -115,18 +115,23 @@ const FixedMenu = styled.div`
 `;
 
 const Logo = styled.div`
-	margin-left: 108px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
 
 	img {
-		max-width: 90px;
+		max-width: 110px;
 	}
 `;
 
 const SocialLinks = styled.ul`
 	display: flex;
+	flex-wrap: wrap;
 	list-style-type: none;
 	height: 100%;
 	align-items: center;
+	z-index: 201;
+	max-width: 90px;
 
 	a {
 		height: 100%;
