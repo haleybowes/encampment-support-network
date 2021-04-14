@@ -8,7 +8,7 @@ const StyledContactUsPage = styled.section`
     margin: 50px 20px 0;
     
     @media (min-width: 768px) {
-        margin: 60px auto 0;
+        margin: 60px auto;
         width: 80%;
     }
 
