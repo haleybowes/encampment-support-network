@@ -81,30 +81,16 @@ const StyledTile = styled.div`
 const ImageTile = styled.div`
 	width: 100%;
 	background-size: cover;
-	/* border: 1px solid #060b04; */
 	background-position: center;
 	background-image: url(${({ background }) => background});
 	min-height: 320px;
-	/* margin: 0 15px 20px 10px; */
 	border-radius: 6px;
-	/* box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
-		6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04; */
 
 	@media (min-width: 768px) {
 		min-height: 400px;
 		max-height: 500px;
 		width: calc(50% - 10px);
 		margin: 0 5px;
-		/* margin: 0 15px 30px; */
-		/* box-shadow: 1px 1px #060b04, 2px 2px #060b04, 3px 3px #060b04, 4px 4px #060b04, 5px 5px #060b04,
-			6px 6px #060b04, 7px 7px #060b04, 8px 8px #060b04, 9px 9px #060b04, 10px 10px #060b04,
-			11px 11px #060b04, 12px 12px #060b04;
-
-		box-shadow: 1px 1px #2928ce, 2px 2px #2928ce, 3px 3px #2928ce, 4px 4px #2928ce, 5px 5px #2928ce,
-			6px 6px #2928ce, 7px 7px #2928ce, 8px 8px #2928ce, 9px 9px #2928ce, 10px 10px #2928ce,
-			11px 11px #2928ce, 12px 12px #2928ce; */
-
-		/* border: 1px solid #2928CE;
 		box-shadow: 1px 1px #2928CE, 2px 2px #2928CE, 3px 3px #2928CE, 4px 4px #2928CE, 5px 5px #2928CE,
 			6px 6px #2928CE, 7px 7px #2928CE, 8px 8px #2928CE, 9px 9px #2928CE, 10px 10px #2928CE,
 			11px 11px #2928CE, 12px 12px #2928CE; */
