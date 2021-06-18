@@ -18,7 +18,7 @@ const StyledNav = styled.nav`
 	margin: 0;
 	padding: 10px 20px;
 
-	@media (max-width: 940px) {
+	@media (max-width: 1150px) {
 		display: none;
 	}
 
@@ -69,7 +69,8 @@ const StyledList = styled.ul`
 			}
 
 			&:nth-of-type(2),
-			&:nth-of-type(3) {
+			&:nth-of-type(3),
+			&:nth-of-type(4) {
 				a {
 					padding: 15px 10px;
 					span {
@@ -95,7 +96,8 @@ const StyledList = styled.ul`
 	}
 
 	&:nth-of-type(2),
-	&:nth-of-type(3) {
+	&:nth-of-type(3),
+	&:nth-of-type(4) {
 		a {
 			display: block;
 			transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
