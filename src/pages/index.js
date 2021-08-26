@@ -11,6 +11,7 @@ export const query = graphql`
 			content {
 				... on ContentfulTile {
 					id
+					addDropShadow
 					backgroundColour
 					component
 					logo {
