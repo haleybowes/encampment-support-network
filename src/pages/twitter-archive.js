@@ -50,6 +50,42 @@ const PageWrapper = styled.div`
   margin-top: 100px;
 `;
 
+const TweetText = ({ tweetText }) => {
+  const linkRegex = /(https:\/\/:*[0-9a-zA-Z/.#]*)/g;
+  const tagRegex = /(@:*[0-9a-zA-Z/.#_]*)/g;
+
+  const stringSplit = tweetText.split(linkRegex).reduce((acc, curr) => {
+    if (curr.match(linkRegex)) {
+      acc.push(curr);
+      return acc;
+    }
+
+    const nextSplit = curr.split(tagRegex);
+    return [...acc, ...nextSplit];
+  }, []);
+
+  const final = [];
+
+  stringSplit.forEach((split) => {
+    const linkMatch = split.match(linkRegex);
+    const tagMatch = split.match(tagRegex);
+    if (linkMatch) {
+      const link = <a href={linkMatch}>{linkMatch}</a>;
+      return final.push(link);
+    }
+
+    if (tagMatch) {
+      const tagLink = <a href={`https://twitter.com/${tagMatch}`}>{tagMatch}</a>;
+      return final.push(tagLink);
+    }
+
+    const other = <span>{split}</span>;
+    return final.push(other);
+  });
+
+  return <p>{final}</p>;
+};
+
 const Tweet = ({ tweetText, likes }) => {
   return (
     <StyledTweet>
