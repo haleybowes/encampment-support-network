@@ -75,6 +75,10 @@ const StyledHeader = styled.div`
 	}
 `;
 
+const StyledInstaLink = styled.a`
+	text-transform: lowercase;
+`;
+
 const InstaText = ({ instaText }) => {
 	const tagRegex = /(@:*[0-9a-zA-Z/.#_]*)/g;
 
@@ -84,7 +88,7 @@ const InstaText = ({ instaText }) => {
 	stringSplit.forEach((split) => {
 		const tagMatch = split.match(tagRegex);
 		if (tagMatch) {
-			const tagLink = <a href={`https://www.instagram.com/${tagMatch.substring(1)}`}>{tagMatch}</a>;
+			const tagLink = <StyledInstaLink href={`https://www.instagram.com/${tagMatch[0].substring(1)}`}>{tagMatch}</StyledInstaLink>;
 			return final.push(tagLink);
 		}
 
@@ -119,7 +123,7 @@ const InstaPost = ({ post }) => {
 						</ImageWrapper>
 					))}
 				</Slider>
-				<InstaText instaText={post.media.title} />
+				<InstaText instaText={post.title} />
 			</StyledInstagramPost>
 		);
 	}
@@ -130,10 +134,10 @@ const InstaPost = ({ post }) => {
 				<img src={ProfilePic} alt="" />
 				<p><strong>Encampment Support Network</strong></p>
 			</StyledHeader>
-					<ImageWrapper>
-						<img src={post.media[0].uri} alt="" />
-					</ImageWrapper>
-			<InstaText instaText={post.media[0].title}/>
+			<ImageWrapper>
+				<img src={post.media[0].uri} alt="" />
+			</ImageWrapper>
+			<InstaText instaText={post.media[0].title} />
 		</StyledInstagramPost>
 	);
 };
