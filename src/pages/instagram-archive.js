@@ -23,7 +23,7 @@ const ImageWrapper = styled.div`
 	max-height: 100%;
 	object-fit: contain;
 
-	img {
+	img, video {
 		max-width: 100%;
 	}
 `;
@@ -117,16 +117,22 @@ const InstaPost = ({ post }) => {
 					<p><strong>Encampment Support Network</strong></p>
 				</StyledHeader>
 				<Slider {...settings}>
-					{post.media.map(({ uri }) => (
-						<ImageWrapper>
-							<img src={uri} alt="" />
-						</ImageWrapper>
-					))}
+					{post.media.map(({ uri }) => {
+						const isVideo = uri.split('.').pop() === 'mp4';
+						return (
+							<ImageWrapper>
+								{isVideo ? <video controls><source src={uri} type="video/mp4" /></video> : <img src={uri} alt="" />}
+							</ImageWrapper>
+						)
+					})}
 				</Slider>
 				<InstaText instaText={post.title} />
 			</StyledInstagramPost>
 		);
 	}
+
+	const url = post.media[0].uri;
+	const isVideo = url.split('.').pop() === 'mp4';
 
 	return (
 		<StyledInstagramPost>
@@ -135,7 +141,7 @@ const InstaPost = ({ post }) => {
 				<p><strong>Encampment Support Network</strong></p>
 			</StyledHeader>
 			<ImageWrapper>
-				<img src={post.media[0].uri} alt="" />
+				{isVideo ? <video controls><source src={url} type="video/mp4" /></video> : <img src={url} alt="" />}
 			</ImageWrapper>
 			<InstaText instaText={post.media[0].title} />
 		</StyledInstagramPost>
