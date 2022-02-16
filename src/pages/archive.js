@@ -78,16 +78,7 @@ const StyledHeader = styled.div`
 const InstaText = ({ instaText }) => {
 	const tagRegex = /(@:*[0-9a-zA-Z/.#_]*)/g;
 
-	const stringSplit = instaText.split(tagRegex).reduce((acc, curr) => {
-		if (curr.match(linkRegex)) {
-			acc.push(curr);
-			return acc;
-		}
-
-		acc.push(curr);
-		return acc;
-	}, []);
-
+	const stringSplit = instaText.split(tagRegex);
 	const final = [];
 
 	stringSplit.forEach((split) => {
