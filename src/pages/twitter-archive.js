@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Nav from '../components/nav/Nav';
 import GlobalStyle from '../styles/globalStyles';
-import tweets from '../data/tweets.json';
+import tweets from '../content/tweets.json';
 import ProfilePic from '../content/profilepic.jpg';
 
 const StyledTweet = styled.div`
