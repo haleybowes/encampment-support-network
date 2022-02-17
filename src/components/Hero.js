@@ -35,6 +35,7 @@ const Text = styled.div`
 			font-size: 60px;
 			line-height: 52px;
 			margin-bottom: 2rem;
+			color: #f6f6eb;
 		}
 
 		@media (min-width: 1024px) {
@@ -52,6 +53,7 @@ const Text = styled.div`
 			font-size: 18px;
 			width: 70%;
 			margin: 0 auto;
+			color: #f6f6eb;
 		}
 	}
 `;

@@ -16,15 +16,17 @@ const StyledTweet = styled.div`
     flex-basis: calc(50% - 20px);
   }
 
+  @media (min-width: 1024px) {
+    flex-basis: calc(100%/3 - 20px);
+  }
+
   a {
     text-transform: lowercase;
   }
 
-  img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+  video {
+    max-width: 100%;
+    margin-top: 30px;
   }
 
   .tweet-body {
@@ -39,6 +41,19 @@ const StyledTweet = styled.div`
     border-top: 1px solid #010754;
   }
 `;
+
+const StyledTwitterAsset = styled.img`
+  max-width: 100%;
+  margin-top: 30px;
+  border-radius: 5px;
+`;
+
+const StyledProfilePic = styled.img`
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+`; 
 
 const TweetWrapper = styled.div`
   display: flex;
@@ -86,16 +101,20 @@ const TweetText = ({ tweetText }) => {
   return <p>{final}</p>;
 };
 
-const Tweet = ({ tweetText, likes }) => {
+const Tweet = ({ tweetText, likes, asset, video: extended_entities }) => {
+  const video = extended_entities && extended_entities.media && extended_entities.media[0].video_info && extended_entities.media[0].video_info.variants.find(video => video.content_type === 'video/mp4').url;
+
   return (
     <StyledTweet>
-      <img src={ProfilePic} alt="" />
+      <StyledProfilePic src={ProfilePic} alt="" />
       <div className="tweet-body">
         <div>
           <p className="tweet-body-title">
             <strong>Encampment Support Network Toronto</strong>
           </p>
           <TweetText tweetText={tweetText} />
+          {asset && !video && <StyledTwitterAsset src={asset} alt="" />}
+          {video && <video controls><source src={video} type="video/mp4" /></video>}
         </div>
       </div>
     </StyledTweet>
@@ -104,14 +123,15 @@ const Tweet = ({ tweetText, likes }) => {
 
 const ArchivePage = () => {
   const tweetsByDate = tweets.sort((a, b) => new Date(b.tweet.created_at) - new Date(a.tweet.created_at));
+
   return (
     <div>
       <GlobalStyle />
       <Nav />
       <PageWrapper>
         <TweetWrapper>
-          {tweetsByDate.map(({ tweet: { full_text, favorite_count } }) => (
-            <Tweet tweetText={full_text} />
+          {tweetsByDate.map(({ tweet: { full_text, favorite_count, entities, extended_entities } }, index) => (
+            <Tweet key={index} tweetText={full_text} asset={entities.media && entities.media[0].media_url} video={extended_entities}/>
           ))}
         </TweetWrapper>
       </PageWrapper>
