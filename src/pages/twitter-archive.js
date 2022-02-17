@@ -27,6 +27,7 @@ const StyledTweet = styled.div`
   video {
     max-width: 100%;
     margin-top: 30px;
+    border-radius: 5px;
   }
 
   .tweet-body {
