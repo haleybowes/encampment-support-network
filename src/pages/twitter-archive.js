@@ -70,12 +70,12 @@ const TweetText = ({ tweetText }) => {
     const linkMatch = split.match(linkRegex);
     const tagMatch = split.match(tagRegex);
     if (linkMatch) {
-      const link = <a href={linkMatch}>{linkMatch}</a>;
+      const link = <a target="_blank" href={linkMatch}>{linkMatch}</a>;
       return final.push(link);
     }
 
     if (tagMatch) {
-      const tagLink = <a href={`https://twitter.com/${tagMatch}`}>{tagMatch}</a>;
+      const tagLink = <a target="_blank" href={`https://twitter.com/${tagMatch}`}>{tagMatch}</a>;
       return final.push(tagLink);
     }
 

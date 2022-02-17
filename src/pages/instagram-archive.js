@@ -93,7 +93,7 @@ const InstaText = ({ instaText }) => {
 	stringSplit.forEach((split) => {
 		const tagMatch = split.match(tagRegex);
 		if (tagMatch) {
-			const tagLink = <StyledInstaLink href={`https://www.instagram.com/${tagMatch[0].substring(1)}`}>{tagMatch}</StyledInstaLink>;
+			const tagLink = <StyledInstaLink target="_blank" href={`https://www.instagram.com/${tagMatch[0].substring(1)}`}>{tagMatch}</StyledInstaLink>;
 			return final.push(tagLink);
 		}
 
