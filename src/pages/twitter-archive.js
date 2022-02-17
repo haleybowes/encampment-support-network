@@ -97,21 +97,21 @@ const Tweet = ({ tweetText, likes }) => {
           </p>
           <TweetText tweetText={tweetText} />
         </div>
-        <p className="post-likes">❤️ {likes}</p>
       </div>
     </StyledTweet>
   );
 };
 
 const ArchivePage = () => {
+  const tweetsByDate = tweets.sort((a, b) => new Date(b.tweet.created_at) - new Date(a.tweet.created_at));
   return (
     <div>
       <GlobalStyle />
       <Nav />
       <PageWrapper>
         <TweetWrapper>
-          {tweets.map(({ tweet: { full_text, favorite_count } }) => (
-            <Tweet tweetText={full_text} likes={favorite_count} />
+          {tweetsByDate.map(({ tweet: { full_text, favorite_count } }) => (
+            <Tweet tweetText={full_text} />
           ))}
         </TweetWrapper>
       </PageWrapper>

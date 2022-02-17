@@ -39,6 +39,11 @@ const StyledInstagramPost = styled.div`
     width: calc(50% - 20px);
 	}
 
+	@media (min-width: 1024px) {
+		margin: 10px;
+    width: calc(100%/3 - 20px);
+	}
+
 	.slick-prev:before, .slick-next:before {
 		font-size: 30px;
 	}
@@ -149,13 +154,26 @@ const InstaPost = ({ post }) => {
 };
 
 const ArchivePage = () => {
+	const organizePosts = posts.reduce((acc, curr) => {
+		if (curr.media.length > 1) {
+			acc.push(curr);
+			return acc;
+		}
+
+		acc.push({
+			...curr,
+			creation_timestamp: curr.media[0].creation_timestamp
+		})
+		return acc;
+	}, []).sort((a, b) => b.creation_timestamp - a.creation_timestamp)
+
 	return (
 		<div>
 			<GlobalStyle />
 			<Nav />
 			<PageWrapper>
 				<Wrapper>
-					{posts.map(post => <InstaPost post={post} />)}
+					{organizePosts.map(post => <InstaPost post={post} />)}
 				</Wrapper>
 			</PageWrapper>
 		</div>
