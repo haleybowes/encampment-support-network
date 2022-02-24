@@ -46,31 +46,6 @@ const StyledList = styled.ul`
 
 	&:nth-of-type(1) {
 		li {
-			&:first-of-type {
-				a {
-					color: #060b04;
-					margin-right: 20px;
-					letter-spacing: 0.5px;
-					border-radius: 5px;
-					padding: 15px 30px;
-					transition: 0.25s box-shadow, 0.25s transform;
-					background-color: #c89220;
-					border: 1px solid #010754;
-					box-shadow: 1px 1px #f83a11, 2px 2px #f83a11, 3px 3px #f83a11, 4px 4px #f83a11,
-						5px 5px #f83a11, 6px 6px #f83a11;
-					color: #010754;
-
-					&:hover,
-					&:focus {
-						box-shadow: unset;
-						transform: translate(0.3em, 0.2em);
-					}
-				}
-			}
-
-			&:nth-of-type(2),
-			&:nth-of-type(3),
-			&:nth-of-type(4) {
 				a {
 					padding: 15px 10px;
 					span {
@@ -95,20 +70,15 @@ const StyledList = styled.ul`
 		}
 	}
 
-	&:nth-of-type(2),
-	&:nth-of-type(3),
-	&:nth-of-type(4) {
 		a {
 			display: block;
 			transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
 			&:hover,
 			&:focus {
-				transform: translateY(-2px);
 				opacity: 0.8;
 			}
 		}
-	}
 
 	img {
 		max-width: 40px;

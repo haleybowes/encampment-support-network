@@ -80,6 +80,12 @@ const StyledHeader = styled.div`
 	}
 `;
 
+const StyledInstaDate = styled.p`
+	text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+`;
+
 const StyledInstaLink = styled.a`
 	text-transform: lowercase;
 `;
@@ -93,7 +99,7 @@ const InstaText = ({ instaText }) => {
 	stringSplit.forEach((split) => {
 		const tagMatch = split.match(tagRegex);
 		if (tagMatch) {
-			const tagLink = <StyledInstaLink target="_blank" href={`https://www.instagram.com/${tagMatch[0].substring(1)}`}>{tagMatch}</StyledInstaLink>;
+			const tagLink = <StyledInstaLink target="_blank" rel="noopener noreferrer" href={`https://www.instagram.com/${tagMatch[0].substring(1)}`}>{tagMatch}</StyledInstaLink>;
 			return final.push(tagLink);
 		}
 
@@ -114,6 +120,8 @@ const InstaPost = ({ post }) => {
 		adaptiveHeight: true,
 	};
 
+	// console.log(post.creation_timestamp)
+
 	if (post.media.length > 1) {
 		return (
 			<StyledInstagramPost>
@@ -132,6 +140,7 @@ const InstaPost = ({ post }) => {
 					})}
 				</Slider>
 				<InstaText instaText={post.title} />
+				<StyledInstaDate>{new Date(post.creation_timestamp * 1000).toDateString()}</StyledInstaDate>
 			</StyledInstagramPost>
 		);
 	}
@@ -149,6 +158,7 @@ const InstaPost = ({ post }) => {
 				{isVideo ? <video controls><source src={url} type="video/mp4" /></video> : <img src={url} alt="" />}
 			</ImageWrapper>
 			<InstaText instaText={post.media[0].title} />
+			<StyledInstaDate>{new Date(post.creation_timestamp * 1000).toDateString()}</StyledInstaDate>
 		</StyledInstagramPost>
 	);
 };

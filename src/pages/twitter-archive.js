@@ -66,6 +66,13 @@ const PageWrapper = styled.div`
   margin-top: 100px;
 `;
 
+const StyledTweetDate = styled.p`
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding-top: 10px;
+`;
+
 const TweetText = ({ tweetText }) => {
   const linkRegex = /(https:\/\/:*[0-9a-zA-Z/.#]*)/g;
   const tagRegex = /(@:*[0-9a-zA-Z/.#_]*)/g;
@@ -86,12 +93,12 @@ const TweetText = ({ tweetText }) => {
     const linkMatch = split.match(linkRegex);
     const tagMatch = split.match(tagRegex);
     if (linkMatch) {
-      const link = <a target="_blank" href={linkMatch}>{linkMatch}</a>;
+      const link = <a target="_blank" rel="noopener noreferrer" href={linkMatch}>{linkMatch}</a>;
       return final.push(link);
     }
 
     if (tagMatch) {
-      const tagLink = <a target="_blank" href={`https://twitter.com/${tagMatch}`}>{tagMatch}</a>;
+      const tagLink = <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${tagMatch}`}>{tagMatch}</a>;
       return final.push(tagLink);
     }
 
@@ -102,7 +109,7 @@ const TweetText = ({ tweetText }) => {
   return <p>{final}</p>;
 };
 
-const Tweet = ({ tweetText, likes, asset, video: extended_entities }) => {
+const Tweet = ({ tweetText, likes, asset, video: extended_entities, date }) => {
   const video = extended_entities && extended_entities.media && extended_entities.media[0].video_info && extended_entities.media[0].video_info.variants.find(video => video.content_type === 'video/mp4').url;
 
   return (
@@ -116,6 +123,7 @@ const Tweet = ({ tweetText, likes, asset, video: extended_entities }) => {
           <TweetText tweetText={tweetText} />
           {asset && !video && <StyledTwitterAsset src={asset} alt="" />}
           {video && <video controls><source src={video} type="video/mp4" /></video>}
+          <StyledTweetDate>{new Date(date).toDateString()}</StyledTweetDate>
         </div>
       </div>
     </StyledTweet>
@@ -131,8 +139,8 @@ const ArchivePage = () => {
       <Nav />
       <PageWrapper>
         <TweetWrapper>
-          {tweetsByDate.map(({ tweet: { full_text, favorite_count, entities, extended_entities } }, index) => (
-            <Tweet key={index} tweetText={full_text} asset={entities.media && entities.media[0].media_url} video={extended_entities}/>
+          {tweetsByDate.map(({ tweet: { created_at, full_text, favorite_count, entities, extended_entities } }, index) => (
+            <Tweet key={index} tweetText={full_text} asset={entities.media && entities.media[0].media_url} video={extended_entities} date={created_at}/>
           ))}
         </TweetWrapper>
       </PageWrapper>
