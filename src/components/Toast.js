@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledToast = styled.section`
     background: #010754;
     padding: 40px 30px;
-    margin-top: 82px;
+    margin-top: 100px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 

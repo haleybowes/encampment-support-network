@@ -28,12 +28,6 @@ const StyledNav = styled.nav`
 `;
 
 const Logo = styled.div`
-	position: absolute;
-	right: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-
 	img {
 		max-width: 120px;
 	}
@@ -86,34 +80,38 @@ const StyledList = styled.ul`
 	}
 `;
 
+const StyledSection = styled.div`
+	display: flex;
+`;
+
 const DesktopNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks } }) => {
 	return (
 		<StyledNav className={navUnderline}>
-			{textLinks && (
-				<StyledList>
-					{textLinks.map((link) => (
-						<li key={link.id}>
-							<Link link={link} />
-						</li>
-					))}
-				</StyledList>
+			{logoLink && (
+				<Logo>
+					<Link link={logoLink} />
+				</Logo>
 			)}
-			<div>
-			{socialLinks && (
-				<StyledList>
-					{socialLinks.map((link) => (
-						<li key={link.id}>
-							<Link link={link} />
-						</li>
-					))}
-				</StyledList>
-			)}
-				{logoLink && (
-					<Logo>
-						<Link link={logoLink} />
-					</Logo>
+			<StyledSection>
+				{textLinks && (
+					<StyledList>
+						{textLinks.map((link) => (
+							<li key={link.id}>
+								<Link link={link} />
+							</li>
+						))}
+					</StyledList>
 				)}
-			</div>
+				{socialLinks && (
+					<StyledList>
+						{socialLinks.map((link) => (
+							<li key={link.id}>
+								<Link link={link} />
+							</li>
+						))}
+					</StyledList>
+				)}
+			</StyledSection>
 		</StyledNav>
 	);
 };

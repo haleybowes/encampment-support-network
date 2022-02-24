@@ -11,7 +11,8 @@ import Slider from "react-slick";
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
+	margin: 10px;
+	max-width: 100%;
 `;
 
 const PageWrapper = styled.div`
