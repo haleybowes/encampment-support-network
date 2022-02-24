@@ -6,7 +6,7 @@ import PageBuilder from '../templates/pageBuilder';
 const PublicStatementPage = ({ data }) => <PageBuilder content={data.contentfulPage.content} />;
 
 export const query = graphql`
-	query NewsletterPageQuery {
+	query PublicStatementPageQuery {
 		contentfulPage(internalName: { eq: "Public Statement Page" }) {
 			id
 			content {
