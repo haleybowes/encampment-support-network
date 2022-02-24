@@ -99,11 +99,6 @@ const DesktopNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks 
 				</StyledList>
 			)}
 			<div>
-			{logoLink && (
-				<Logo>
-					<Link link={logoLink} />
-				</Logo>
-			)}
 			{socialLinks && (
 				<StyledList>
 					{socialLinks.map((link) => (
@@ -113,6 +108,11 @@ const DesktopNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks 
 					))}
 				</StyledList>
 			)}
+				{logoLink && (
+					<Logo>
+						<Link link={logoLink} />
+					</Logo>
+				)}
 			</div>
 		</StyledNav>
 	);
