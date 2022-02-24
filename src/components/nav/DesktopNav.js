@@ -98,6 +98,7 @@ const DesktopNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks 
 					))}
 				</StyledList>
 			)}
+			<div>
 			{logoLink && (
 				<Logo>
 					<Link link={logoLink} />
@@ -112,6 +113,7 @@ const DesktopNav = ({ navUnderline, content: { logoLink, socialLinks, textLinks 
 					))}
 				</StyledList>
 			)}
+			</div>
 		</StyledNav>
 	);
 };
