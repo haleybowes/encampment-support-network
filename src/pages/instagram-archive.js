@@ -83,7 +83,9 @@ const StyledHeader = styled.div`
 const StyledInstaDate = styled.p`
 	text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.75rem;
+	font-size: 0.75rem;
+	padding: 0;
+	margin-top: 10px;
 `;
 
 const StyledInstaLink = styled.a`
@@ -119,8 +121,6 @@ const InstaPost = ({ post }) => {
 		slidesToScroll: 1,
 		adaptiveHeight: true,
 	};
-
-	// console.log(post.creation_timestamp)
 
 	if (post.media.length > 1) {
 		return (
